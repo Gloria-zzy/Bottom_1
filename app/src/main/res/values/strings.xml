@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">龙门镖局</string>
+    <string name="app_name">UD</string>
     <string name="welcome">Welcome!</string>
     <string name="home">主页</string>
     <string name="get">代取</string>
@@ -21,6 +21,6 @@
     <string name="fail_to_login">Fail to login, please try later</string>
     <string name="fail_to_load_timeline_data">Fail to load messages,please try later</string>
     <string name="suc_to_get_code">Succeed to get code, please check your short message</string>
-    <string name = "connecting">Connecting</string>
-    <string name = "connecting_to_server">Connecting to server, please wait</string>
+    <string name="connecting">Connecting</string>
+    <string name="connecting_to_server">Connecting to server, please wait</string>
 </resources>
