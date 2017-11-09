@@ -5,7 +5,6 @@ import com.example.administrator.bottom.Config;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-// ���ն�����֤�����
 public class GetCode {
 	public GetCode(String phone, final SuccessCallback successCallback, final FailCallback failCallback) {
 		
@@ -17,14 +16,12 @@ public class GetCode {
 					JSONObject jsonObj = new JSONObject(result);
 					switch (jsonObj.getInt(Config.KEY_STATUS)) {
 					
-					// ����Ψһ�ĳɹ������
 					case Config.RESULT_STATUS_SUCCESS:
 						if (successCallback != null) {
 							successCallback.onSuccess();
 						}
 						break;
 
-					// �������е��������ʧ�ܵ�
 					default:
 						if (failCallback != null) {
 							failCallback.onFail();
