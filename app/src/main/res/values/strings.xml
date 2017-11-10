@@ -1,5 +1,5 @@
 <resources>
-    <!--&#160;-->
+    <!-- &#160; 是空格-->
     <string name="app_name">UD</string>
     <string name="welcome">Welcome!</string>
     <string name="home">主页</string>
