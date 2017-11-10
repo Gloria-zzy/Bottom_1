@@ -113,10 +113,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_below="@id/linearlayout2"
         android:gravity="center"
-        android:paddingTop="50dp"
+        android:paddingTop="10dp"
         >
 
         <Button
@@ -132,6 +132,23 @@
             android:background="@drawable/check_border"
 
             />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="300sp"
+            android:layout_height="40sp"
+            android:layout_gravity="center"
+            android:text="注册"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:background="@drawable/check_border"
+
+            />
+
     </LinearLayout>
+
+
 
 </RelativeLayout>

@@ -99,6 +99,14 @@ public class AtyLogin extends Activity{
 				});
 			}
 		});
+
+		findViewById(R.id.btnRegister).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(AtyLogin.this,AtyRegister.class);
+				startActivity(intent);
+			}
+		});
 		
 	}
 	
