@@ -31,85 +31,93 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/etUserName"
-        android:drawableLeft="@drawable/usr_name"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="6dp"
-        android:singleLine="true"
-        android:inputType="textPersonName"
-        android:hint="请输入你的用户名"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20sp">
 
-    <EditText
-        android:id="@+id/etPassword_1"
-        android:drawableLeft="@drawable/pwd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="6dp"
-        android:singleLine="true"
-        android:inputType="textPassword"
-        android:hint="请输入您的密码"/>
+        <EditText
+            android:id="@+id/etUserName"
+            android:drawableLeft="@drawable/usr_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="6dp"
+            android:singleLine="true"
+            android:inputType="textPersonName"
+            android:hint="请输入你的用户名"/>
 
-    <EditText
-        android:id="@+id/etPassword_2"
-        android:drawableLeft="@drawable/pwd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="6dp"
-        android:singleLine="true"
-        android:inputType="textPassword"
-        android:hint="请再次输入您的密码"/>
+        <EditText
+            android:id="@+id/etPassword_1"
+            android:drawableLeft="@drawable/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="6dp"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:hint="请输入您的密码"/>
 
-    <EditText
-        android:id="@+id/etPhoneNumber"
-        android:drawableLeft="@drawable/phone"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="6dp"
-        android:singleLine="true"
-        android:inputType="phone"
-        android:hint="请输入您的手机号"/>
+        <EditText
+            android:id="@+id/etPassword_2"
+            android:drawableLeft="@drawable/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="6dp"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:hint="请再次输入您的密码"/>
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:drawableLeft="@drawable/email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="6dp"
-        android:singleLine="true"
-        android:inputType="textEmailAddress"
-        android:hint="请输入您的邮箱地址"/>
+        <EditText
+            android:id="@+id/etPhoneNumber"
+            android:drawableLeft="@drawable/phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="6dp"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:hint="请输入您的手机号"/>
 
-    <EditText
-        android:id="@+id/etAddress"
-        android:drawableLeft="@drawable/house"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="6dp"
-        android:singleLine="true"
-        android:inputType="text"
-        android:hint="请输入您的住址"/>
+        <EditText
+            android:id="@+id/etEmail"
+            android:drawableLeft="@drawable/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="6dp"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
+            android:hint="请输入您的邮箱地址"/>
 
-    <TextView
-        android:id="@+id/tvCode"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="right"
-        android:layout_margin="6dp"
-        android:hint="BiuBiu~专属代号"
-        android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/etAddress"
+            android:drawableLeft="@drawable/house"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="6dp"
+            android:singleLine="true"
+            android:inputType="text"
+            android:hint="请输入您的住址"/>
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@drawable/btnsend_bg"
-        android:text="提交"
-        android:textSize="20dp"
-        android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/tvCode"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_margin="6dp"
+            android:hint="BiuBiu~专属代号"
+            android:textSize="15dp"/>
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/btnsend_bg"
+            android:text="提交"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
 
 
 </LinearLayout>
