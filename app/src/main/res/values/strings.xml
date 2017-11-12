@@ -17,11 +17,14 @@
     <string name="login">登录</string>
     <string name="publish_message">publish message</string>
     <string name="phone_num_cannot_be_empty">手机号不能为空！</string>
+    <string name="username_cannot_be_empty">请输入用户名</string>
     <string name="code_cannot_be_empty">验证码不能为空！</string>
     <string name="fail_to_get_code">获取验证码失败！</string>
     <string name="fail_to_login">登录失败，请稍后再试</string>
     <string name="fail_to_load_timeline_data">Fail to load messages,please try later</string>
     <string name="suc_to_get_code">验证码已发送，请及时查看信息</string>
+    <string name="suc_to_regist">注册成功</string>
+    <string name="fail_to_regist">注册失败</string>
     <string name="connecting">连接中...</string>
     <string name="connecting_to_server">正在连接服务器，请稍后...</string>
 </resources>

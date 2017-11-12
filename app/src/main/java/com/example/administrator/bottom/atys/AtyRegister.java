@@ -1,13 +1,18 @@
 package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.bottom.R;
+import com.example.administrator.bottom.net.Register;
 
 import static java.security.AccessController.getContext;
 
@@ -16,12 +21,24 @@ import static java.security.AccessController.getContext;
  */
 
 public class AtyRegister extends Activity {
+    private EditText etUserName;
+    private EditText etPassword_1;
+    private EditText etPassword_2;
+    private EditText etPhoneNumber;
+    private EditText etEmail;
+    private EditText etAddress;
 
     private TextView tvcode;
 
     //UI组件初始化
     private void bindView() {
         tvcode = (TextView) findViewById(R.id.tvCode);
+        etUserName = (EditText) findViewById(R.id.etUserName);
+        etPassword_1 = (EditText) findViewById(R.id.etPassword_1);
+        etPassword_2 = (EditText) findViewById(R.id.etPassword_2);
+        etPhoneNumber = (EditText) findViewById(R.id.etPhoneNumber);
+        etEmail = (EditText) findViewById(R.id.etEmail);
+        etAddress = (EditText) findViewById(R.id.etAddress);
     }
 
     //随机六位数字代号
@@ -63,6 +80,31 @@ public class AtyRegister extends Activity {
                 String s = randomCode();
                 String code = "您的代号：" + s;
                 tvcode.setText(code);
+            }
+        });
+
+        findViewById(R.id.btnRegister).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                if (TextUtils.isEmpty(etUserName.getText())) {
+                    Toast.makeText(AtyRegister.this, R.string.username_cannot_be_empty, Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                final ProgressDialog pd = ProgressDialog.show(AtyRegister.this, getResources().getString(R.string.connecting), getResources().getString(R.string.connecting_to_server));
+                new Register(etUserName.getText().toString(), etPassword_1.getText().toString(), etPhoneNumber.getText().toString(), etEmail.getText().toString(), etAddress.getText().toString(), new Register.SuccessCallback() {
+                    @Override
+                    public void onSuccess(String token) {
+                        pd.dismiss();
+                        Toast.makeText(AtyRegister.this, R.string.suc_to_regist, Toast.LENGTH_LONG).show();
+                    }
+                }, new Register.FailCallback() {
+                    @Override
+                    public void onFail() {
+                        pd.dismiss();
+                        Toast.makeText(AtyRegister.this, R.string.fail_to_regist, Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
     }

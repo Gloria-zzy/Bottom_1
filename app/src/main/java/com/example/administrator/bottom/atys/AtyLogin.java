@@ -15,7 +15,6 @@ import com.example.administrator.bottom.net.GetCode;
 import com.example.administrator.bottom.net.Login;
 import com.example.administrator.bottom.tools.MD5Tool;
 
-
 public class AtyLogin extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,16 +77,8 @@ public class AtyLogin extends Activity{
 						Config.cacheToken(AtyLogin.this, token);
 						Config.cachePhoneNum(AtyLogin.this, etPhone.getText().toString());
 
-						//------------------------------------------------------------------------
-
 						Intent i = new Intent(AtyLogin.this, AtyMainFrame.class);
-
-//						i.putExtra(Config.KEY_TOKEN, token);
-//						i.putExtra(Config.KEY_PHONE_NUM, etPhone.getText().toString());
 						startActivity(i);
-
-						//------------------------------------------------------------------------
-
 						finish();
 					}
 				}, new Login.FailCallback() {
