@@ -11,12 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.atys.AtyFetch;
-import com.example.administrator.bottom.atys.AtyLogin;
-import com.example.administrator.bottom.atys.AtyRegister;
+import com.example.administrator.bottom.atys.AtyMail;
 
 /**
  * Created by Administrator on 2017/10/29.
@@ -25,7 +23,7 @@ import com.example.administrator.bottom.atys.AtyRegister;
 public class FragHome extends Fragment {
     private String context;
     private TextView mTextView;
-    private Button btn;
+    private Button get_btn,mail_btn;
 
     public FragHome(){
 
@@ -36,7 +34,8 @@ public class FragHome extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_home,container,false);
-        btn=(Button)view.findViewById(R.id.get_btn);
+        get_btn=(Button)view.findViewById(R.id.get_btn);
+        mail_btn=(Button)view.findViewById(R.id.mail_btn);
         return view;
     }
     @Override
@@ -45,12 +44,20 @@ public class FragHome extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        get_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 startActivityForResult(new Intent(getActivity(),AtyFetch.class), Activity.RESULT_FIRST_USER);
+            }
+        });
+        mail_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                startActivityForResult(new Intent(getActivity(),AtyMail.class), Activity.RESULT_FIRST_USER);
             }
         });
     }

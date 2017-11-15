@@ -27,7 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".atys.AtyFetch"></activity>
+        <activity android:name=".atys.AtyFetch" />
+        <activity android:name=".atys.AtyMail"></activity>
     </application>
 
 </manifest>

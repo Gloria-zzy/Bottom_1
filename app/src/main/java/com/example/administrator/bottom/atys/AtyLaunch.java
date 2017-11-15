@@ -22,7 +22,7 @@ public class AtyLaunch extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(AtyLaunch.this, AtyLogin.class));
+                startActivity(new Intent(AtyLaunch.this, AtyMainFrame.class));
                 AtyLaunch.this.finish();
             }
         }, time);

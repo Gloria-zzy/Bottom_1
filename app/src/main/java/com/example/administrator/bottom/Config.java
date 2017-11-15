@@ -42,8 +42,10 @@ public class Config {
     public static final String ACTION_GET_COMMENT = "get_comment";
     public static final String ACTION_REGIST = "regist";
 
-
     public static final int ACTIVITY_RESULT_NEED_REFRESH = 10000;
+
+    //if user has already login , then loginStatue = 1
+    public static int loginStatus = 0;
 
     public static String getCachedToken(Context context) {
         return context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE)

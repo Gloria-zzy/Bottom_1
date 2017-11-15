@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
-            android:text="请选择您方便的收货时间："
+            android:text="请选择您方便的送货时间："
             android:textSize="20sp" />
 
         <RelativeLayout
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
-            android:text="请选择您方便的收货地点："
+            android:text="请选择您方便的送货地点："
             android:textSize="20sp" />
 
         <RelativeLayout
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:layout_marginBottom="20sp"
-            android:text="我同意UD平台代取业务用户协议"
+            android:text="我同意UD平台代寄业务用户协议"
             android:textSize="20sp"
             />
 

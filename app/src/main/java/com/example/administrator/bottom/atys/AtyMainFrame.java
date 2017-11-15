@@ -1,6 +1,7 @@
 package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,13 +16,14 @@ import com.example.administrator.bottom.frag.FragMe;
 import com.example.administrator.bottom.frag.FragCommunity;
 import com.example.administrator.bottom.R;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/10/31.
  */
 
-public class AtyMainFrame  extends Activity implements View.OnClickListener{
+public class AtyMainFrame extends Activity implements View.OnClickListener {
 
-    private TextView topBar;
     private TextView tabHome;
     private TextView tabGet;
     private TextView tabPost;
@@ -29,6 +31,7 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
 
     private FrameLayout ly_content;
 
+    private Fragment[] fragments = new Fragment[4];
     private FragHome fragHome;
     private FragOrder fragOrder;
     private FragCommunity fragCommunity;
@@ -52,7 +55,6 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
         transaction.commit();
 
 
-
 // Written by charles
 //        String token = Config.getCachedToken(this);
 //        String phone_num = Config.getCachedPhoneNum(this);
@@ -63,17 +65,17 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
 //            i.putExtra(Config.KEY_PHONE_NUM, phone_num);
 //            startActivity(i);
 //        } else {
-//            startActivity(new Intent(this, AtyLogin.class));
+//            startActivity(new Intent(this, FragLogin.class));
 //        }
     }
 
     //UI组件初始化与事件绑定
     private void bindView() {
 //        topBar = (TextView)this.findViewById(R.id.txt_top);
-        tabHome = (TextView)this.findViewById(R.id.txt_home);
-        tabGet = (TextView)this.findViewById(R.id.txt_get);
-        tabPost = (TextView)this.findViewById(R.id.txt_post);
-        tabMe = (TextView)this.findViewById(R.id.txt_me);
+        tabHome = (TextView) this.findViewById(R.id.txt_home);
+        tabGet = (TextView) this.findViewById(R.id.txt_get);
+        tabPost = (TextView) this.findViewById(R.id.txt_post);
+        tabMe = (TextView) this.findViewById(R.id.txt_me);
         ly_content = (FrameLayout) findViewById(R.id.fragment_container);
 
         tabHome.setOnClickListener(this);
@@ -84,7 +86,7 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
     }
 
     //重置所有文本的选中状态
-    public void selected(){
+    public void selected() {
         tabHome.setSelected(false);
         tabGet.setSelected(false);
         tabPost.setSelected(false);
@@ -92,17 +94,17 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
     }
 
     //隐藏所有Fragment
-    public void hideAllFragment(FragmentTransaction transaction){
-        if(fragHome !=null){
+    public void hideAllFragment(FragmentTransaction transaction) {
+        if (fragHome != null) {
             transaction.hide(fragHome);
         }
-        if(fragOrder !=null){
+        if (fragOrder != null) {
             transaction.hide(fragOrder);
         }
-        if(fragCommunity !=null){
+        if (fragCommunity != null) {
             transaction.hide(fragCommunity);
         }
-        if(fragMe !=null){
+        if (fragMe != null) {
             transaction.hide(fragMe);
         }
     }
@@ -111,14 +113,14 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         hideAllFragment(transaction);
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.txt_home:
                 selected();
                 tabHome.setSelected(true);
-                if(fragHome ==null){
+                if (fragHome == null) {
                     fragHome = new FragHome();
                     transaction.add(R.id.fragment_container, fragHome);
-                }else{
+                } else {
                     transaction.show(fragHome);
                 }
                 break;
@@ -126,10 +128,10 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
             case R.id.txt_get:
                 selected();
                 tabGet.setSelected(true);
-                if(fragOrder ==null){
+                if (fragOrder == null) {
                     fragOrder = new FragOrder();
                     transaction.add(R.id.fragment_container, fragOrder);
-                }else{
+                } else {
                     transaction.show(fragOrder);
                 }
                 break;
@@ -137,10 +139,10 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
             case R.id.txt_post:
                 selected();
                 tabPost.setSelected(true);
-                if(fragCommunity ==null){
+                if (fragCommunity == null) {
                     fragCommunity = new FragCommunity();
                     transaction.add(R.id.fragment_container, fragCommunity);
-                }else{
+                } else {
                     transaction.show(fragCommunity);
                 }
                 break;
@@ -148,10 +150,10 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
             case R.id.txt_me:
                 selected();
                 tabMe.setSelected(true);
-                if(fragMe ==null){
+                if (fragMe == null) {
                     fragMe = new FragMe();
                     transaction.add(R.id.fragment_container, fragMe);
-                }else{
+                } else {
                     transaction.show(fragMe);
                 }
                 break;
@@ -160,7 +162,7 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
         transaction.commit();
     }
 
-    public static void close(){
+    public static void close() {
 
     }
 
