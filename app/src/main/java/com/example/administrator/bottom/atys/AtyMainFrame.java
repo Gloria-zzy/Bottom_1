@@ -51,8 +51,6 @@ public class AtyMainFrame  extends Activity implements View.OnClickListener{
         transaction.show(fragHome);
         transaction.commit();
 
-
-
 // Written by charles
 //        String token = Config.getCachedToken(this);
 //        String phone_num = Config.getCachedPhoneNum(this);
