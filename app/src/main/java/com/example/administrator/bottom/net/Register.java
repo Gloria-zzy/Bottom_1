@@ -50,7 +50,7 @@ public class Register {
                     failCallback.onFail();
                 }
             }
-        }, Config.KEY_ACTION, Config.ACTION_LOGIN, Config.KEY_USERNAME, username, Config.KEY_PASSWORD, password, Config.KEY_PHONE_NUM, phone, Config.KEY_EMAIL, email, Config.KEY_ADDRESS, address);
+        }, Config.KEY_ACTION, Config.ACTION_REGIST, Config.KEY_USERNAME, username, Config.KEY_PASSWORD, password, Config.KEY_PHONE_NUM, phone, Config.KEY_EMAIL, email, Config.KEY_ADDRESS, address);
     }
 
     public static interface SuccessCallback {
