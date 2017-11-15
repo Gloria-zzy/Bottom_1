@@ -94,7 +94,7 @@ public class AtyRegister extends Activity {
                     Toast.makeText(AtyRegister.this, R.string.password_cannot_be_empty, Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (etPassword_1.getText().toString().equals(etPassword_2.getText().toString())) {
+                if (!etPassword_1.getText().toString().equals(etPassword_2.getText().toString())) {
                     Toast.makeText(AtyRegister.this, R.string.password_cannot_be_dismatch, Toast.LENGTH_LONG).show();
                     return;
                 }
