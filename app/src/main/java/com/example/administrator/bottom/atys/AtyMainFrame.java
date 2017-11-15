@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.bottom.frag.FragOrder;
 import com.example.administrator.bottom.frag.FragHome;
@@ -46,13 +47,14 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         bindView();
 //        getSupportActionBar().hide();
 
-        //      load home page!!!
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        tabHome.setSelected(true);
-        fragHome = new FragHome();
-        transaction.add(R.id.fragment_container, fragHome);
-        transaction.show(fragHome);
-        transaction.commit();
+        //      load page!!!
+        showFragHome();
+        String showType = getIntent().getStringExtra("returnType");
+        // have problem
+        if (showType == "log") {
+            Toast.makeText(AtyMainFrame.this, showType, Toast.LENGTH_LONG).show();
+            showFragMe();
+        }
 
 // Written by charles
 //        String token = Config.getCachedToken(this);
@@ -165,5 +167,48 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
 
     }
 
+    public void showFragHome() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
+        selected();
+        tabHome.setSelected(true);
+        fragHome = new FragHome();
+        transaction.add(R.id.fragment_container, fragHome);
+        transaction.show(fragHome);
+        transaction.commit();
+    }
+
+    public void showFragOrder() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
+        selected();
+        tabGet.setSelected(true);
+        fragOrder = new FragOrder();
+        transaction.add(R.id.fragment_container, fragOrder);
+        transaction.show(fragOrder);
+        transaction.commit();
+    }
+
+    public void showFragCommunity() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
+        selected();
+        tabPost.setSelected(true);
+        fragCommunity = new FragCommunity();
+        transaction.add(R.id.fragment_container, fragCommunity);
+        transaction.show(fragCommunity);
+        transaction.commit();
+    }
+
+    public void showFragMe() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
+        selected();
+        tabMe.setSelected(true);
+        fragMe = new FragMe();
+        transaction.add(R.id.fragment_container, fragMe);
+        transaction.show(fragMe);
+        transaction.commit();
+    }
 }
 

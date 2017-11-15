@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.atys.AtyLogin;
+import com.example.administrator.bottom.atys.AtyMainFrame;
 import com.example.administrator.bottom.atys.AtyRegister;
 
 /**
@@ -41,7 +42,7 @@ public class FragMe extends Fragment {
 //        });
 
         mTextView = (TextView) view.findViewById(R.id.func_btn);
-        if (Config.loginStatus == 0){
+        if (Config.loginStatus == 0) {
             mTextView.setText("登录注册");
             mTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -50,12 +51,20 @@ public class FragMe extends Fragment {
                     startActivity(intent);
                 }
             });
-        }else{
+        } else {
             mTextView.setText("退出登录");
+            mTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Config.loginStatus = 0;
+                    Intent intent = new Intent(getActivity(), AtyMainFrame.class);
+                    intent.putExtra("returnType","log");
+                    startActivity(intent);
+                }
+            });
         }
 
 
-
-            return view;
+        return view;
     }
 }
