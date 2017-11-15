@@ -1,28 +1,31 @@
 package com.example.administrator.bottom.net;
 
+/**
+ * Created by Administrator on 2017/11/12 0012.
+ */
+
 import com.example.administrator.bottom.Config;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Login {
-    public Login(String phone_md5, String code, final SuccessCallback successCallback, final FailCallback failCallback) {
+public class UploadToken {
+    public UploadToken(String token, final SuccessCallback successCallback, final FailCallback failCallback) {
         new NetConnection(Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
 
             @Override
             public void onSuccess(String result) {
                 try {
                     JSONObject obj = new JSONObject(result);
-                    for (int i = 0; i < 14; i++) {
-                        System.out.println("here staus!!!!!" + obj.getInt(Config.KEY_STATUS));
-                    }
+
                     switch (obj.getInt(Config.KEY_STATUS)) {
+                        // 用户已登录
                         case Config.RESULT_STATUS_SUCCESS:
                             if (successCallback != null) {
-                                successCallback.onSuccess(obj.getString(Config.KEY_TOKEN));
+                                successCallback.onSuccess();
                             }
                             break;
-
+                        // 用户未登录
                         default:
                             if (failCallback != null) {
                                 failCallback.onFail();
@@ -39,18 +42,15 @@ public class Login {
 
             @Override
             public void onFail() {
-                for (int i = 0; i < 14; i++) {
-                    System.out.println("here status!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                }
                 if (failCallback != null) {
                     failCallback.onFail();
                 }
             }
-        }, Config.KEY_ACTION, Config.ACTION_LOGIN, Config.KEY_PHONE_MD5, phone_md5, Config.KEY_CODE, code);
+        }, Config.KEY_ACTION, Config.ACTION_UPLOAD_TOKEN, Config.KEY_TOKEN, token);
     }
 
     public static interface SuccessCallback {
-        void onSuccess(String token);
+        void onSuccess();
     }
 
     public static interface FailCallback {

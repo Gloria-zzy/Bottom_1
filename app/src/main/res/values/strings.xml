@@ -26,6 +26,8 @@
     <string name="fail_to_load_timeline_data">Fail to load messages,please try later</string>
     <string name="suc_to_get_code">验证码已发送，请及时查看信息</string>
     <string name="suc_to_regist">注册成功</string>
+    <string name="login_already">您已登录</string>
+    <string name="login_notyet">您尚未登录</string>
     <string name="fail_to_regist">用户名已存在</string>
     <string name="connecting">连接中...</string>
     <string name="connecting_to_server">正在连接服务器，请稍后...</string>

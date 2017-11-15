@@ -102,10 +102,6 @@ public class AtyLogin extends Activity {
                         startActivity(i);
                         finish();
 
-//                        FragmentManager fm = AtyLogin.this.getFragmentManager();
-//                        Fragment fragment = new FragMe();
-//                        fm.beginTransaction().replace(R.id.fragment_container,fragment).commit();
-
                     }
                 }, new Login.FailCallback() {
 
