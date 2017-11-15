@@ -8,7 +8,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"
+        android:background="@color/border_clo"
         android:orientation="vertical">
 
 
@@ -21,6 +21,22 @@
             android:gravity="center"
             android:queryHint="@string/search_qryHint"
             android:textSize="18sp" />
+
+        <include
+            android:id="@+id/record1"
+            layout="@layout/mod_record" />
+        <include
+            android:id="@+id/record2"
+            layout="@layout/mod_record" />
+        <include
+            android:id="@+id/record3"
+            layout="@layout/mod_record" />
+        <include
+            android:id="@+id/record4"
+            layout="@layout/mod_record" />
+        <include
+            android:id="@+id/record5"
+            layout="@layout/mod_record" />
 
     </LinearLayout>
 </ScrollView>
