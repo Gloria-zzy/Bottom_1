@@ -98,6 +98,7 @@ public class AtyLogin extends Activity {
                         Config.loginStatus = 1;
 
                         Intent i = new Intent(AtyLogin.this, AtyMainFrame.class);
+                        i.putExtra("returnType","log");
                         startActivity(i);
                         finish();
 
