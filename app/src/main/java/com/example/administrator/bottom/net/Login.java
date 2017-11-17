@@ -6,7 +6,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Login {
-    public Login(String phone_md5, String code, final SuccessCallback successCallback, final FailCallback failCallback) {
+    public Login(String phone_md5, String code, String phone, final SuccessCallback successCallback, final FailCallback failCallback) {
         new NetConnection(Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
 
             @Override
@@ -46,7 +46,7 @@ public class Login {
                     failCallback.onFail();
                 }
             }
-        }, Config.KEY_ACTION, Config.ACTION_LOGIN, Config.KEY_PHONE_MD5, phone_md5, Config.KEY_CODE, code);
+        }, Config.KEY_ACTION, Config.ACTION_LOGIN, Config.KEY_PHONE_MD5, phone_md5, Config.KEY_CODE, code, Config.KEY_PHONE_NUM, phone);
     }
 
     public static interface SuccessCallback {

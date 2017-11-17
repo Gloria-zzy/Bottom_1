@@ -73,7 +73,6 @@ public class AtyAddress extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_address);
 
-
         bindView();
         findViewById(R.id.Address_back).setOnClickListener(new View.OnClickListener() {
             @Override

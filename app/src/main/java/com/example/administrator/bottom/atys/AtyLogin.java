@@ -20,6 +20,7 @@ public class AtyLogin extends Activity {
 
     private EditText etPhone = null;
     private EditText etCode = null;
+
     private Button getcodeBtn, loginBtn, registerBtn;
 
     //UI组件初始化
@@ -82,7 +83,7 @@ public class AtyLogin extends Activity {
                     return;
                 }
 
-                new Login(MD5Tool.md5(etPhone.getText().toString()), etCode.getText().toString(), new Login.SuccessCallback() {
+                new Login(MD5Tool.md5(etPhone.getText().toString()), etCode.getText().toString(), etPhone.getText().toString(),new Login.SuccessCallback() {
 
                     @Override
                     public void onSuccess(String token) {
@@ -90,7 +91,7 @@ public class AtyLogin extends Activity {
                         Config.cacheToken(AtyLogin.this, token);
                         Config.cachePhoneNum(AtyLogin.this, etPhone.getText().toString());
 
-                        Config.loginStatus = 1;
+//                        Config.loginStatus = 1;
 
                         Intent i = new Intent(AtyLogin.this, AtyAddress.class);
 //                        i.putExtra("returnType","log");
