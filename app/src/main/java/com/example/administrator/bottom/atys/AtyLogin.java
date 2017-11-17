@@ -1,22 +1,17 @@
 package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
-import com.example.administrator.bottom.frag.FragMe;
 import com.example.administrator.bottom.net.GetCode;
 import com.example.administrator.bottom.net.Login;
 import com.example.administrator.bottom.tools.MD5Tool;
@@ -33,7 +28,7 @@ public class AtyLogin extends Activity {
         etCode = (EditText) findViewById(R.id.etCode);
         getcodeBtn = (Button) findViewById(R.id.btnGetCode);
         loginBtn = (Button) findViewById(R.id.btnLogin);
-        registerBtn = (Button) findViewById(R.id.btnRegister);
+//        registerBtn = (Button) findViewById(R.id.btnRegister);
     }
 
     @Override
@@ -97,8 +92,8 @@ public class AtyLogin extends Activity {
 
                         Config.loginStatus = 1;
 
-                        Intent i = new Intent(AtyLogin.this, AtyMainFrame.class);
-                        i.putExtra("returnType","log");
+                        Intent i = new Intent(AtyLogin.this, AtyAddress.class);
+//                        i.putExtra("returnType","log");
                         startActivity(i);
                         finish();
 
@@ -113,12 +108,12 @@ public class AtyLogin extends Activity {
             }
         });
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AtyLogin.this, AtyRegister.class);
-                startActivity(intent);
-            }
-        });
+//        registerBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(AtyLogin.this, AtyAddress.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

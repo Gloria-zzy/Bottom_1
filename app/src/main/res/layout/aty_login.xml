@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/usr_icon"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -134,19 +134,19 @@
 
             />
 
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="300sp"
-            android:layout_height="40sp"
-            android:layout_gravity="center"
-            android:text="注册"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="5dp"
-            android:textSize="18sp"
-            android:textColor="#fff"
-            android:background="@drawable/check_border"
+        <!--<Button-->
+            <!--android:id="@+id/btnRegister"-->
+            <!--android:layout_width="300sp"-->
+            <!--android:layout_height="40sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="注册"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:background="@drawable/check_border"-->
 
-            />
+            <!--/>-->
 
     </LinearLayout>
 
