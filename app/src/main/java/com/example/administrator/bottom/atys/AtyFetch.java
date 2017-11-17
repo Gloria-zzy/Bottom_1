@@ -48,10 +48,10 @@ public class AtyFetch extends AppCompatActivity {
         data_list.add("17：20~18：30");
         data_list.add("20：10~21：40");
 
-        //适配器
-        arr_adapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
-        //设置样式
-        arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //适配器 android.R.layout.simple_spinner_item
+        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+        //设置样式 android.R.layout.simple_spinner_dropdown_item
+        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
         time_spinner.setAdapter(arr_adapter);
 
