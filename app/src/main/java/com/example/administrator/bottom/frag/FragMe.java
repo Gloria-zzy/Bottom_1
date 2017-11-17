@@ -42,7 +42,7 @@ public class FragMe extends Fragment {
 
         mTextView = (TextView) view.findViewById(R.id.func_btn);
         if (Config.loginStatus == 0) {
-            mTextView.setText("登录注册");
+            mTextView.setText("登录");
             mTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -59,6 +59,7 @@ public class FragMe extends Fragment {
                     Intent intent = new Intent(getActivity(), AtyMainFrame.class);
                     intent.putExtra("returnType","log");
                     startActivity(intent);
+                    Config.cacheToken(getActivity(), "");
                 }
             });
         }

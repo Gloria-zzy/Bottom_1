@@ -14,6 +14,8 @@ import com.example.administrator.bottom.net.UploadToken;
 
 import static com.example.administrator.bottom.Config.APP_ID;
 
+import com.example.administrator.bottom.Config;
+
 public class AtyLaunch extends Activity {
 
     @Override
@@ -34,11 +36,13 @@ public class AtyLaunch extends Activity {
                 @Override
                 public void onSuccess() {
                     Toast.makeText(AtyLaunch.this, R.string.login_already, Toast.LENGTH_LONG).show();
+                    Config.loginStatus = 1;
                 }
             }, new UploadToken.FailCallback() {
                 @Override
                 public void onFail() {
                     Toast.makeText(AtyLaunch.this, R.string.login_notyet, Toast.LENGTH_LONG).show();
+                    Config.loginStatus = 0;
                 }
             });
         }
