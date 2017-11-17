@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:src="@drawable/back" />
+            android:src="@drawable/item_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="15sp"
             android:layout_marginTop="5sp"
-            android:src="@drawable/head" />
+            android:src="@drawable/item_head" />
 
     </LinearLayout>
 
@@ -73,7 +73,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/down_arrow" />
+                android:src="@drawable/item_down_arrow" />
 
         </RelativeLayout>
 
@@ -105,7 +105,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/down_arrow" />
+                android:src="@drawable/item_down_arrow" />
         </RelativeLayout>
 
 
@@ -139,7 +139,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_margin="20dp"
-            android:background="@drawable/btnsend_bg"
+            android:background="@drawable/btn_send_bg"
             android:gravity="center"
             android:text="提交"
             android:textColor="@color/white"

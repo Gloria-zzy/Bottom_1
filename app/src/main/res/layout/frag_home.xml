@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/banner2" />
+            android:src="@drawable/pic_banner2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dip"
                 android:layout_weight="1"
-                android:background="@drawable/check_border"
+                android:background="@drawable/btn_check_border"
                 android:gravity="center"
                 android:text="@string/want_to_get"
                 android:textColor="#ffffff"
@@ -61,7 +61,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dip"
                 android:layout_weight="1"
-                android:background="@drawable/check_border"
+                android:background="@drawable/btn_check_border"
                 android:gravity="center"
                 android:text="@string/want_to_post"
                 android:textColor="#ffffff"

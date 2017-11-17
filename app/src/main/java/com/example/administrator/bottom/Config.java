@@ -10,7 +10,7 @@ public class Config {
 
     public static final String KEY_TOKEN = "token";
     public static final String KEY_ACTION = "action";
-    public static final String KEY_PHONE_NUM = "phone";
+    public static final String KEY_PHONE_NUM = "item_phone";
     public static final String KEY_PHONE_MD5 = "phone_md5";
     public static final String KEY_STATUS = "status";
     public static final String KEY_CODE = "key_code";
@@ -25,7 +25,7 @@ public class Config {
     public static final String KEY_ADDRESS = "address";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
-    public static final String KEY_EMAIL = "email";
+    public static final String KEY_EMAIL = "item_email";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_FAIL = 0;

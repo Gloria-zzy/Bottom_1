@@ -14,7 +14,7 @@
             android:id="@+id/Address_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"
+            android:src="@drawable/item_back"
             android:layout_margin="5dp"
             />
         <TextView
@@ -39,7 +39,7 @@
 
         <!--<EditText-->
             <!--android:id="@+id/etUserName"-->
-            <!--android:drawableLeft="@drawable/usr_name"-->
+            <!--android:drawableLeft="@drawaitem_usr_namename"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="50dp"-->
             <!--android:layout_margin="6dp"-->
@@ -51,7 +51,7 @@
 
         <!--<EditText-->
             <!--android:id="@+id/etPassword_1"-->
-            <!--android:drawableLeft="@drawable/pwd"-->
+            <!--android:drawableLeft="@drawaitem_pwd/pwd"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="50dp"-->
             <!--android:layout_margin="6dp"-->
@@ -63,7 +63,7 @@
 
         <!--<EditText-->
             <!--android:id="@+id/etPassword_2"-->
-            <!--android:drawableLeft="@drawable/pwd"-->
+            <!--android:drawableLeft="@drawaitem_pwd/pwd"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="50dp"-->
             <!--android:layout_margin="6dp"-->
@@ -75,19 +75,19 @@
 
         <!--<EditText-->
             <!--android:id="@+id/etPhoneNumber"-->
-            <!--android:drawableLeft="@drawable/phone"-->
+            <!--android:drawableLeft="@drawaitem_phonehone"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="50dp"-->
             <!--android:layout_margin="6dp"-->
             <!--android:singleLine="true"-->
-            <!--android:inputType="phone"-->
+            <!--android:inputTyitem_phonehone"-->
             <!--android:hint="请输入您的手机号"-->
             <!--android:background="@drawable/spinner_border"-->
             <!--android:paddingLeft="5sp"/>-->
 
         <!--<EditText-->
             <!--android:id="@+id/etEmail"-->
-            <!--android:drawableLeft="@drawable/email"-->
+            <!--android:drawableLeft="@drawaitem_emailmail"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="50dp"-->
             <!--android:layout_margin="6dp"-->
@@ -99,7 +99,7 @@
 
         <!--<EditText-->
             <!--android:id="@+id/etAddress"-->
-            <!--android:drawableLeft="@drawable/house"-->
+            <!--android:drawableLeft="@drawaitem_houseouse"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="50dp"-->
             <!--android:layout_margin="6dp"-->
@@ -144,7 +144,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/down_arrow" />
+                android:src="@drawable/item_down_arrow" />
 
         </RelativeLayout>
 
@@ -176,7 +176,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/down_arrow" />
+                android:src="@drawable/item_down_arrow" />
         </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -205,7 +205,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/down_arrow" />
+                android:src="@drawable/item_down_arrow" />
         </RelativeLayout>
         <Button
             android:id="@+id/btnAddress"
@@ -214,7 +214,7 @@
             android:layout_margin="10dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/btnsend_bg"
+            android:background="@drawable/btn_send_bg"
             android:text="提交"
             android:textSize="20dp"
             android:textColor="@color/white"

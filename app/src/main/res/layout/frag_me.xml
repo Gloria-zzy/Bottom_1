@@ -26,7 +26,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="50dp"
                 android:layout_marginStart="50dp"
-                android:src="@drawable/head" />
+                android:src="@drawable/item_head" />
             <!--
                 android:layout_marginLeft="40dp"
                 android:layout_marginBottom="10dp"
@@ -54,6 +54,7 @@
             <LinearLayout style="@style/top_layout">
 
                 <TextView
+                    android:id="@+id/address"
                     style="@style/usertext"
                     android:text="收货地址" />
 
@@ -104,10 +105,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginTop="20dp"
-            android:background="#f67854"
+            android:background="@drawable/btn_border"
             android:text="退出登录"
             android:textColor="#fff"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"/>
 
 
     </LinearLayout>

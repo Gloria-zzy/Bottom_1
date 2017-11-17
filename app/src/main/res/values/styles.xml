@@ -49,12 +49,12 @@
 
     <!--无圆角样式  -->
     <style name="mid_layout" parent="base_layout">
-        <item name="android:background">@drawable/mid_layout_selector</item>
+        <item name="android:background">@drawable/selector_mid_layout</item>
     </style>
 
     <!-- 下圆角样式 -->
     <style name="bottom_layout"  parent="base_layout">
-        <item name="android:background">@drawable/bottom_layout_selector</item>
+        <item name="android:background">@drawable/select_bottom_layout</item>
     </style>
 
     <!-- 全圆角样式 -->
@@ -78,7 +78,7 @@
     <style name="img_arrow">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:src">@drawable/setting_arrow</item>
+        <item name="android:src">@drawable/item_setting_arrow</item>
 
     </style>
 

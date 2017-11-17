@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="20dp"
-    android:background="@drawable/login_bg"
+    android:background="@drawable/item_login_bg"
     >
 
     <RelativeLayout
@@ -19,7 +19,7 @@
             android:id="@+id/head"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:src="@drawable/head"
+            android:src="@drawable/item_head"
             android:layout_gravity="center_vertical"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
@@ -40,7 +40,7 @@
         <!--<TextView-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/phone"-->
+            <!--android:text="@stritem_phonehone"-->
             <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
 
         <EditText
@@ -98,7 +98,7 @@
                 android:textSize="12sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ffffff"
-                android:background="@drawable/code_btn_border"
+                android:background="@drawable/btn_code_border"
                 android:layout_marginLeft="10sp"
                 android:layout_marginTop="20sp"
                 android:layout_marginBottom="20sp"
@@ -130,7 +130,7 @@
             android:layout_margin="20dp"
             android:textSize="18sp"
             android:textColor="#fff"
-            android:background="@drawable/check_border"
+            android:background="@drawable/btn_check_border"
 
             />
 
@@ -144,7 +144,7 @@
             <!--android:layout_margin="5dp"-->
             <!--android:textSize="18sp"-->
             <!--android:textColor="#fff"-->
-            <!--android:background="@drawable/check_border"-->
+            <!--android:background="@drawabtn_check_borderrder"-->
 
             <!--/>-->
 
