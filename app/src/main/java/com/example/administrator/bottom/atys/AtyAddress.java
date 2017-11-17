@@ -46,8 +46,8 @@ public class AtyAddress extends Activity {
 //        etEmail = (EditText) findViewById(R.id.etEmail);
 //        etAddress = (EditText) findViewById(R.id.etAddress);
         area_spinner = (Spinner) findViewById(R.id.time_spinner);
-        building_spinner = (Spinner) findViewById(R.id.time_spinner);
-        room_spinner = (Spinner) findViewById(R.id.time_spinner);
+        building_spinner = (Spinner) findViewById(R.id.building_spinner);
+        room_spinner = (Spinner) findViewById(R.id.room_spinner);
     }
 
     //随机六位数字代号
