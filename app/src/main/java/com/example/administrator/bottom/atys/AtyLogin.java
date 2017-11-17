@@ -91,7 +91,7 @@ public class AtyLogin extends Activity {
                         Config.cacheToken(AtyLogin.this, token);
                         Config.cachePhoneNum(AtyLogin.this, etPhone.getText().toString());
 
-//                        Config.loginStatus = 1;
+                        Config.loginStatus = 1;
 
                         Intent i = new Intent(AtyLogin.this, AtyAddress.class);
 //                        i.putExtra("returnType","log");

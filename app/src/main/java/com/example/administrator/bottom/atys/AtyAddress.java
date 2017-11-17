@@ -2,6 +2,7 @@ package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -125,6 +126,8 @@ public class AtyAddress extends Activity {
         findViewById(R.id.btnAddress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
+                startActivity(i);
                 finish();
             }
         });
