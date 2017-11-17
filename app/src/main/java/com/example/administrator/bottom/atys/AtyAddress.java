@@ -45,7 +45,7 @@ public class AtyAddress extends Activity {
 //        etPhoneNumber = (EditText) findViewById(R.id.etPhoneNumber);
 //        etEmail = (EditText) findViewById(R.id.etEmail);
 //        etAddress = (EditText) findViewById(R.id.etAddress);
-        area_spinner = (Spinner) findViewById(R.id.time_spinner);
+
         building_spinner = (Spinner) findViewById(R.id.building_spinner);
         room_spinner = (Spinner) findViewById(R.id.room_spinner);
     }
@@ -128,13 +128,15 @@ public class AtyAddress extends Activity {
                 finish();
             }
         });
+
+
 //        findViewById(R.id.Register_back).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                finish();
 //            }
 //        });
-//
+
 //        bindView();
 //
 //        //随机代号事件

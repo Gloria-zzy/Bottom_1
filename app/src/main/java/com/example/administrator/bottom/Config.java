@@ -58,6 +58,7 @@ public class Config {
                 .edit();
         e.putString(KEY_TOKEN, token);
         e.commit();
+
     }
 
     public static String getCachedPhoneNum(Context context) {
