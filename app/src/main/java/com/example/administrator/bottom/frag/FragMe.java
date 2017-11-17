@@ -13,7 +13,6 @@ import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.atys.AtyLogin;
 import com.example.administrator.bottom.atys.AtyMainFrame;
-import com.example.administrator.bottom.atys.AtyRegister;
 
 /**
  * Created by Administrator on 2017/10/29.
