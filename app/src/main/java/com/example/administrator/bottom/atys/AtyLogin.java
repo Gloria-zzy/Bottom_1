@@ -72,7 +72,6 @@ public class AtyLogin extends Activity {
             @Override
             public void onClick(View arg0) {
 
-
                 if (TextUtils.isEmpty(etPhone.getText())) {
                     Toast.makeText(AtyLogin.this, R.string.phone_num_cannot_be_empty, Toast.LENGTH_LONG).show();
                     return;
@@ -94,7 +93,6 @@ public class AtyLogin extends Activity {
                         Config.loginStatus = 1;
 
                         Intent i = new Intent(AtyLogin.this, AtyAddress.class);
-//                        i.putExtra("returnType","log");
                         startActivity(i);
                         finish();
 

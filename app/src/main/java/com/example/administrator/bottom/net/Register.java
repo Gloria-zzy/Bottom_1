@@ -17,9 +17,7 @@ public class Register {
             public void onSuccess(String result) {
                 try {
                     JSONObject obj = new JSONObject(result);
-                    for (int i = 0; i < 14; i++) {
-                        System.out.println("here staus!!!!!" + obj.getInt(Config.KEY_STATUS));
-                    }
+
                     switch (obj.getInt(Config.KEY_STATUS)) {
                         case Config.RESULT_STATUS_SUCCESS:
                             if (successCallback != null) {

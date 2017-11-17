@@ -46,7 +46,7 @@ public class AtyAddress extends Activity {
 //        etPhoneNumber = (EditText) findViewById(R.id.etPhoneNumber);
 //        etEmail = (EditText) findViewById(R.id.etEmail);
 //        etAddress = (EditText) findViewById(R.id.etAddress);
-        area_spinner = (Spinner) findViewById(R.id.area_spinner);
+
         building_spinner = (Spinner) findViewById(R.id.building_spinner);
         room_spinner = (Spinner) findViewById(R.id.room_spinner);
     }
