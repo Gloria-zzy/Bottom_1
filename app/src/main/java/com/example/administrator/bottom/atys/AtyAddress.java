@@ -90,9 +90,9 @@ public class AtyAddress extends Activity {
         data_list.add("西苑");
 
         //适配器
-        arr_adapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
-        arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
         area_spinner.setAdapter(arr_adapter);
 
@@ -104,9 +104,9 @@ public class AtyAddress extends Activity {
         data_list.add("晖园14栋");
 
         //适配器
-        arr_adapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
-        arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
         building_spinner.setAdapter(arr_adapter);
 
@@ -118,9 +118,9 @@ public class AtyAddress extends Activity {
         data_list.add("120");
 
         //适配器
-        arr_adapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
-        arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
         room_spinner.setAdapter(arr_adapter);
 
