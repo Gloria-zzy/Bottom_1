@@ -9,7 +9,6 @@ public class UploadAddress {
     public UploadAddress(String phone, String school, String area, String building, String room, final SuccessCallback successCallback, final FailCallback failCallback) {
         new NetConnection(Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
 
-
             @Override
             public void onSuccess(String result) {
                 try {

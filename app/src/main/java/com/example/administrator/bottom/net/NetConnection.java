@@ -50,11 +50,11 @@ public class NetConnection {
 						bw.write(paramsStr.toString());
 						bw.flush();
 						break;
-					default: // other cases are all failure
-						// work as get
-						uc = new URL(url + "?" + paramsStr.toString())
+						default: // other cases are all failure
+							// work as get
+							uc = new URL(url + "?" + paramsStr.toString())
 								.openConnection();
-						break;
+							break;
 					}
 
 					// out print the input received

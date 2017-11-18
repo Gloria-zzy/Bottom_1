@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
+import com.example.administrator.bottom.net.GetCode;
 import com.example.administrator.bottom.net.Login;
 import com.example.administrator.bottom.net.Register;
 import com.example.administrator.bottom.net.UploadAddress;
@@ -181,14 +182,14 @@ public class AtyAddress extends Activity {
                 SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
                 String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
 
-                new UploadAddress(phone, school,area,building,room, new UploadAddress.SuccessCallback() {
+                new UploadAddress(phone, "1","2","3","4", new UploadAddress.SuccessCallback() {
 
                     @Override
                     public void onSuccess() {
 
                         Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
                         startActivity(i);
-                        finish();
+//                        finish();
 
                     }
                 }, new UploadAddress.FailCallback() {
