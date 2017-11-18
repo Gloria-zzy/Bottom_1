@@ -2,7 +2,9 @@ package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -22,6 +24,8 @@ import com.example.administrator.bottom.tools.MD5Tool;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.administrator.bottom.Config.APP_ID;
 
 /**
  * Created by Administrator on 2017/11/7 0007.
@@ -172,7 +176,12 @@ public class AtyAddress extends Activity {
         findViewById(R.id.btnAddress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new UploadAddress(school,area,building,room, new UploadAddress.SuccessCallback() {
+
+                // 获得phoneNum
+                SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
+                String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
+
+                new UploadAddress(phone, school,area,building,room, new UploadAddress.SuccessCallback() {
 
                     @Override
                     public void onSuccess() {
@@ -189,11 +198,8 @@ public class AtyAddress extends Activity {
                         Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
                     }
                 });
-
-
             }
         });
-
 
 //        findViewById(R.id.Register_back).setOnClickListener(new View.OnClickListener() {
 //            @Override
