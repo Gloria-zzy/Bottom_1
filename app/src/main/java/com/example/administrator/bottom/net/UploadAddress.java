@@ -1,5 +1,8 @@
 package com.example.administrator.bottom.net;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.example.administrator.bottom.Config;
 
 import org.json.JSONException;
@@ -8,6 +11,7 @@ import org.json.JSONObject;
 public class UploadAddress {
     public UploadAddress(String school, String area, String building,String room, final SuccessCallback successCallback, final FailCallback failCallback) {
         new NetConnection(Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
+
 
             @Override
             public void onSuccess(String result) {

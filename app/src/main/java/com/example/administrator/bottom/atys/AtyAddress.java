@@ -182,7 +182,7 @@ public class AtyAddress extends Activity {
                         finish();
 
                     }
-                }, new Login.FailCallback() {
+                }, new UploadAddress.FailCallback() {
 
                     @Override
                     public void onFail() {
