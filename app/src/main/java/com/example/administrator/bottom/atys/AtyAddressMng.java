@@ -1,24 +1,13 @@
 package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
-import com.example.administrator.bottom.net.Login;
-import com.example.administrator.bottom.net.Register;
-import com.example.administrator.bottom.net.UploadAddress;
-import com.example.administrator.bottom.tools.MD5Tool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +16,7 @@ import java.util.List;
  * Created by Administrator on 2017/11/7 0007.
  */
 
-public class AtyAddress extends Activity {
+public class AtyAddressMng extends Activity {
     //    private EditText etUserName;
 //    private EditText etPassword_1;
 //    private EditText etPassword_2;
@@ -41,10 +30,6 @@ public class AtyAddress extends Activity {
     private Spinner room_spinner;
     private List<String> data_list;
     private ArrayAdapter<String> arr_adapter;
-    private String school = "南京信息工程大学";
-    private String area = "";
-    private String building = "";
-    private String room = "";
 
     //UI组件初始化
     private void bindView() {
@@ -56,9 +41,9 @@ public class AtyAddress extends Activity {
 //        etEmail = (EditText) findViewById(R.id.etEmail);
 //        etAddress = (EditText) findViewById(R.id.etAddress);
 
-        area_spinner = (Spinner) findViewById(R.id.area_spinner);
-        building_spinner = (Spinner) findViewById(R.id.building_spinner);
-        room_spinner = (Spinner) findViewById(R.id.room_spinner);
+        area_spinner = (Spinner) findViewById(R.id.area_spinner_mng);
+        building_spinner = (Spinner) findViewById(R.id.building_spinner_mng);
+        room_spinner = (Spinner) findViewById(R.id.room_spinner_mng);
     }
 
     //随机六位数字代号
@@ -82,10 +67,10 @@ public class AtyAddress extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.aty_address);
+        setContentView(R.layout.aty_address_mng);
 
         bindView();
-        findViewById(R.id.Address_back).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.Address_mng_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -99,7 +84,7 @@ public class AtyAddress extends Activity {
         data_list.add("西苑");
 
         //适配器
-        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
@@ -113,7 +98,7 @@ public class AtyAddress extends Activity {
         data_list.add("晖园14栋");
 
         //适配器
-        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
@@ -127,70 +112,18 @@ public class AtyAddress extends Activity {
         data_list.add("120");
 
         //适配器
-        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
         room_spinner.setAdapter(arr_adapter);
 
-        area_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                area = (String) area_spinner.getSelectedItem();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        building_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                building = (String) building_spinner.getSelectedItem();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        room_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                room = (String) room_spinner.getSelectedItem();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        findViewById(R.id.btnAddress).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_change_Address).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new UploadAddress(school,area,building,room, new UploadAddress.SuccessCallback() {
-
-                    @Override
-                    public void onSuccess() {
-
-                        Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
-                        startActivity(i);
-                        finish();
-
-                    }
-                }, new Login.FailCallback() {
-
-                    @Override
-                    public void onFail() {
-                        Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
-                    }
-                });
-
-
+                Intent i = new Intent(AtyAddressMng.this, AtyMainFrame.class);
+                startActivity(i);
+                finish();
             }
         });
 

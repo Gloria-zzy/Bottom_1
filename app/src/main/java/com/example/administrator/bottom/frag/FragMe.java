@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
+import com.example.administrator.bottom.atys.AtyAddressMng;
 import com.example.administrator.bottom.atys.AtyLogin;
 import com.example.administrator.bottom.atys.AtyMainFrame;
 
@@ -27,19 +28,12 @@ public class FragMe extends Fragment {
 
     }
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_me, container, false);
-//        close_button = (Button) view.findViewById(R.id.close_btn);
-//        close_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getActivity().onBackPressed();
-//            }
-//        });
 
+        //login btn
         mTextView = (TextView) view.findViewById(R.id.func_btn);
         if (Config.loginStatus == 0) {
             mTextView.setText("登录");
@@ -57,12 +51,21 @@ public class FragMe extends Fragment {
                 public void onClick(View view) {
                     Config.loginStatus = 0;
                     Intent intent = new Intent(getActivity(), AtyMainFrame.class);
-                    intent.putExtra("returnType","log");
+                    intent.putExtra("returnType", "log");
                     startActivity(intent);
                     Config.cacheToken(getActivity(), "");
                 }
             });
         }
+
+        //address mng
+        view.findViewById(R.id.address_mng).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AtyAddressMng.class);
+                startActivity(intent);
+            }
+        });
 
 
         return view;

@@ -11,7 +11,7 @@
         android:background="@color/blue">
 
         <ImageView
-            android:id="@+id/Address_back"
+            android:id="@+id/Address_mng_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/item_back"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginRight="30dp"
-            android:text="选择地址"
+            android:text="地址管理"
             style="@style/nav_text"
             android:textColor="@color/white"
             android:layout_gravity="center"
@@ -32,10 +32,37 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20sp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您当前的地址为："
+            style="@style/title_text"/>
+
+        <TextView
+            android:paddingTop="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="南京信息工程大学东苑晖园12栋118"
+            style="@style/default_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20sp">
+        android:padding="10sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginBottom="20sp"
+        android:background="@drawable/btn_func_border"
+        >
 
         <!--<EditText-->
             <!--android:id="@+id/etUserName"-->
@@ -117,10 +144,30 @@
             <!--android:layout_margin="6dp"-->
             <!--android:hint="BiuBiu~专属代号"-->
             <!--android:textSize="15dp"/>-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5sp">
+
+            <Button
+                android:layout_width="120sp"
+                android:layout_height="30sp"
+                android:layout_margin="10dp"
+                android:text="重新定位学校"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_send_bg"
+                style="@style/default_text"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
+            android:layout_marginBottom="10sp"
             android:text="请选择您所在的区域："
             style="@style/default_text" />
 
@@ -129,20 +176,17 @@
             android:layout_height="wrap_content">
 
             <Spinner
-                android:id="@+id/area_spinner"
-                style="@style/spinner_bar"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:id="@+id/area_spinner_mng"
+                style="@style/spinner_bar" />
 
             <ImageView
-                android:layout_alignBottom="@+id/area_spinner"
+                android:layout_alignBottom="@+id/area_spinner_mng"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="2dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                style="@style/spinner_btn" />
+                style="@style/spinner_btn"/>
 
         </RelativeLayout>
 
@@ -150,7 +194,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginTop="5sp"
             android:text="请选择您的楼号："
             style="@style/default_text" />
 
@@ -159,22 +204,23 @@
             android:layout_height="wrap_content">
 
             <Spinner
-                android:id="@+id/building_spinner"
+                android:id="@+id/building_spinner_mng"
                 style="@style/spinner_bar" />
 
             <ImageView
-                android:layout_alignBottom="@+id/building_spinner"
+                android:layout_alignBottom="@+id/building_spinner_mng"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="2dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                style="@style/spinner_btn"/>
+                style="@style/spinner_btn" />
         </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginTop="5sp"
             android:text="请选择您的宿舍号："
             style="@style/default_text" />
 
@@ -183,11 +229,11 @@
             android:layout_height="wrap_content">
 
             <Spinner
-                android:id="@+id/room_spinner"
+                android:id="@+id/room_spinner_mng"
                 style="@style/spinner_bar" />
 
             <ImageView
-                android:layout_alignBottom="@+id/room_spinner"
+                android:layout_alignBottom="@+id/room_spinner_mng"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="2dp"
@@ -195,19 +241,27 @@
                 android:layout_marginRight="24dp"
                 style="@style/spinner_btn"/>
         </RelativeLayout>
-        <Button
-            android:id="@+id/btnAddress"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@drawable/btn_send_bg"
-            android:text="提交"
-            style="@style/default_text"
-            android:textColor="@color/white"
-            android:layout_marginTop="0sp"
-            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+
+            <Button
+                android:id="@+id/btn_change_Address"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/btn_send_bg"
+                android:text="提交修改"
+                style="@style/default_text"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
     </LinearLayout>
 
 

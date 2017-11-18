@@ -26,7 +26,7 @@
             android:gravity="center_horizontal"
             android:text="你的代号"
             android:textColor="@color/white"
-            android:textSize="22dp" />
+            style="@style/nav_text" />
 
         <ImageView
             android:id="@+id/usr_head"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:text="请选择您方便的收货时间："
-            android:textSize="20sp" />
+            style="@style/default_text"/>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -59,21 +59,16 @@
 
             <Spinner
                 android:id="@+id/time_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginBottom="20sp"
-                android:background="@drawable/spinner_border" />
+                style="@style/spinner_bar" />
 
             <ImageView
-                android:layout_width="20sp"
-                android:layout_height="20sp"
                 android:layout_alignBottom="@+id/time_spinner"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="7dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/item_down_arrow" />
+                style="@style/spinner_btn" />
 
         </RelativeLayout>
 
@@ -83,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:text="请选择您方便的收货地点："
-            android:textSize="20sp" />
+            style="@style/default_text" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -91,21 +86,16 @@
 
             <Spinner
                 android:id="@+id/loc_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginBottom="20sp"
-                android:background="@drawable/spinner_border" />
+                style="@style/spinner_bar" />
 
             <ImageView
-                android:layout_width="20sp"
-                android:layout_height="20sp"
                 android:layout_alignBottom="@+id/loc_spinner"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="7dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/item_down_arrow" />
+                style="@style/spinner_btn" />
         </RelativeLayout>
 
 
@@ -114,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:text="备注："
-            android:textSize="20sp" />
+            style="@style/default_text" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -123,7 +113,8 @@
             android:gravity="left|top"
             android:minLines="6"
             android:background="@drawable/spinner_border"
-            android:padding="10sp"/>
+            android:padding="10sp"
+            style="@style/default_text"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -131,7 +122,7 @@
             android:layout_marginTop="20sp"
             android:layout_marginBottom="20sp"
             android:text="我同意UD平台代取业务用户协议"
-            android:textSize="20sp"
+            style="@style/default_text"
             />
 
         <Button
@@ -143,7 +134,7 @@
             android:gravity="center"
             android:text="提交"
             android:textColor="@color/white"
-            android:textSize="20dp" />
+            style="@style/default_text" />
     </LinearLayout>
 
 
