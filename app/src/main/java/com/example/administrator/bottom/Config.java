@@ -74,7 +74,7 @@ public class Config {
     public static void cachePhoneNum(Context context, String phoneNum) {
         Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE)
                 .edit();
-        e.putString(KEY_TOKEN, phoneNum);
+        e.putString(KEY_PHONE_NUM, phoneNum);
         e.commit();
     }
 }
