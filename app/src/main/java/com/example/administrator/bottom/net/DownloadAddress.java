@@ -17,7 +17,7 @@ public class DownloadAddress {
                     switch (obj.getInt(Config.KEY_STATUS)) {
                         case Config.RESULT_STATUS_SUCCESS:
                             if (successCallback != null) {
-                                successCallback.onSuccess();
+                                successCallback.onSuccess(obj.getString(Config.KEY_ADDRESS_SCHOOL), obj.getString(Config.KEY_ADDRESS_AREA), obj.getString(Config.KEY_ADDRESS_BUILDING), obj.getString(Config.KEY_ADDRESS_ROOM));
                             }
                             break;
 
@@ -45,7 +45,7 @@ public class DownloadAddress {
     }
 
     public static interface SuccessCallback {
-        void onSuccess();
+        void onSuccess(String school, String area, String building, String room);
     }
 
     public static interface FailCallback {

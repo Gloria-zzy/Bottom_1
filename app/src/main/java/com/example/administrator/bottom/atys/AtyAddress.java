@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
+import com.example.administrator.bottom.net.DownloadAddress;
 import com.example.administrator.bottom.net.GetCode;
 import com.example.administrator.bottom.net.Login;
 import com.example.administrator.bottom.net.Register;
@@ -182,7 +183,7 @@ public class AtyAddress extends Activity {
                 SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
                 String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
 
-                new UploadAddress(phone, "1","2","3","4", new UploadAddress.SuccessCallback() {
+                new UploadAddress(phone, school,area,building,room, new UploadAddress.SuccessCallback() {
 
                     @Override
                     public void onSuccess() {
@@ -197,6 +198,18 @@ public class AtyAddress extends Activity {
                     @Override
                     public void onFail() {
                         Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
+                    @Override
+                    public void onSuccess(String school, String area, String building, String room) {
+                        System.out.println("school:" + school + "\narea:" + area + "\nbuilding:" + building + "\nroom:" + room);
+                    }
+                }, new DownloadAddress.FailCallback() {
+                    @Override
+                    public void onFail() {
+
                     }
                 });
             }
