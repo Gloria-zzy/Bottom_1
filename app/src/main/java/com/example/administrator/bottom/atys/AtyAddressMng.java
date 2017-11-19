@@ -1,16 +1,22 @@
 package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.administrator.bottom.Config.APP_ID;
 
 /**
  * Created by Administrator on 2017/11/7 0007.
@@ -30,6 +36,7 @@ public class AtyAddressMng extends Activity {
     private Spinner room_spinner;
     private List<String> data_list;
     private ArrayAdapter<String> arr_adapter;
+    private TextView address;
 
     //UI组件初始化
     private void bindView() {
@@ -118,6 +125,15 @@ public class AtyAddressMng extends Activity {
         //加载适配器
         room_spinner.setAdapter(arr_adapter);
 
+        //show current address!!!!
+        // 获得phoneNum
+        SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
+        String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
+
+        address = (TextView) findViewById(R.id.address_text);
+//        address.setText();
+
+        //change address!!!!
         findViewById(R.id.btn_change_Address).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

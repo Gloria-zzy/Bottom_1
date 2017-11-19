@@ -43,6 +43,7 @@ public class Config {
     public static final String ACTION_UPLOAD_ADDRESS = "upload_address";
     public static final String ACTION_UPLOAD_CONTACTS = "upload_contacts";
     public static final String ACTION_UPLOAD_TOKEN = "upload_token";
+    public static final String ACTION_DOWNLOAD_ADDRESS = "download_address";
     public static final String ACTION_TIMELINE = "timeline";
     public static final String ACTION_PUBLISH = "publish";
     public static final String ACTION_GET_COMMENT = "get_comment";
