@@ -8,10 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
+import com.example.administrator.bottom.net.DownloadAddress;
+import com.example.administrator.bottom.net.UploadAddress;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +95,7 @@ public class AtyAddressMng extends Activity {
         data_list.add("西苑");
 
         //适配器
-        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
@@ -105,7 +109,7 @@ public class AtyAddressMng extends Activity {
         data_list.add("晖园14栋");
 
         //适配器
-        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
@@ -119,19 +123,32 @@ public class AtyAddressMng extends Activity {
         data_list.add("120");
 
         //适配器
-        arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
         //加载适配器
         room_spinner.setAdapter(arr_adapter);
 
         //show current address!!!!
+        address = (TextView) findViewById(R.id.address_text);
         // 获得phoneNum
         SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
         String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
+        new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
 
-        address = (TextView) findViewById(R.id.address_text);
-//        address.setText();
+            @Override
+            public void onSuccess(String school, String area, String building, String room) {
+                address.setText(school + area + building + room);
+                setSpinner(area, building, room);
+            }
+        }, new DownloadAddress.FailCallback() {
+
+            @Override
+            public void onFail() {
+                Toast.makeText(AtyAddressMng.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
+            }
+        });
+
 
         //change address!!!!
         findViewById(R.id.btn_change_Address).setOnClickListener(new View.OnClickListener() {
@@ -198,5 +215,35 @@ public class AtyAddressMng extends Activity {
 //                });
 //            }
 //        });
+    }
+
+    void setSpinner(String area, String building, String room) {
+        SpinnerAdapter apsAdapter1 = area_spinner.getAdapter(); //得到SpinnerAdapter对象
+        int k1 = apsAdapter1.getCount();
+        for (int i = 0; i < k1; i++) {
+            if (room.equals(apsAdapter1.getItem(i).toString())) {
+//                spinner.setSelection(i,true);// 默认选中项
+                area_spinner.setSelection(i);// 默认选中项
+                break;
+            }
+        }
+        SpinnerAdapter apsAdapter2 = building_spinner.getAdapter(); //得到SpinnerAdapter对象
+        int k2 = apsAdapter2.getCount();
+        for (int i = 0; i < k2; i++) {
+            if (room.equals(apsAdapter2.getItem(i).toString())) {
+//                spinner.setSelection(i,true);// 默认选中项
+                building_spinner.setSelection(i);// 默认选中项
+                break;
+            }
+        }
+        SpinnerAdapter apsAdapter3 = room_spinner.getAdapter(); //得到SpinnerAdapter对象
+        int k3 = apsAdapter3.getCount();
+        for (int i = 0; i < k3; i++) {
+            if (room.equals(apsAdapter3.getItem(i).toString())) {
+//                spinner.setSelection(i,true);// 默认选中项
+                room_spinner.setSelection(i);// 默认选中项
+                break;
+            }
+        }
     }
 }

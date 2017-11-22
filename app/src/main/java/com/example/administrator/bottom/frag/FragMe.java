@@ -1,7 +1,9 @@
 package com.example.administrator.bottom.frag;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -15,13 +17,15 @@ import com.example.administrator.bottom.atys.AtyAddressMng;
 import com.example.administrator.bottom.atys.AtyLogin;
 import com.example.administrator.bottom.atys.AtyMainFrame;
 
+import static com.example.administrator.bottom.Config.APP_ID;
+
 /**
  * Created by Administrator on 2017/10/29.
  */
 
 public class FragMe extends Fragment {
     private String context;
-    private TextView mTextView;
+    private TextView mTextView, phone_num;
 //    private Button close_button;
 
     public FragMe() {
@@ -67,6 +71,15 @@ public class FragMe extends Fragment {
             }
         });
 
+        //show phone number!!!!
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
+        String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
+        phone_num = (TextView) view.findViewById(R.id.textView);
+        if(Config.loginStatus == 1){
+            phone_num.setText(phone);
+        }else{
+            phone_num.setText("未登录");
+        }
 
         return view;
     }

@@ -201,17 +201,17 @@ public class AtyAddress extends Activity {
                     }
                 });
 
-                new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
-                    @Override
-                    public void onSuccess(String school, String area, String building, String room) {
-                        System.out.println("school:" + school + "\narea:" + area + "\nbuilding:" + building + "\nroom:" + room);
-                    }
-                }, new DownloadAddress.FailCallback() {
-                    @Override
-                    public void onFail() {
-
-                    }
-                });
+//                new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
+//                    @Override
+//                    public void onSuccess(String school, String area, String building, String room) {
+//                        System.out.println("school:" + school + "\narea:" + area + "\nbuilding:" + building + "\nroom:" + room);
+//                    }
+//                }, new DownloadAddress.FailCallback() {
+//                    @Override
+//                    public void onFail() {
+//
+//                    }
+//                });
             }
         });
 
