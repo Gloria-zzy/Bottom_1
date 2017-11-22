@@ -195,6 +195,36 @@
                 android:layout_marginRight="24dp"
                 style="@style/spinner_btn"/>
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/rb_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"/>
+            <TextView
+                android:id="@+id/iagree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我同意"
+                android:layout_toRightOf="@id/rb_agree"
+                android:layout_alignBaseline="@id/rb_agree"
+                />
+            <TextView
+                android:id="@+id/agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/i_agree"
+                android:layout_toRightOf="@id/iagree"
+                android:layout_alignBaseline="@id/rb_agree"
+                />
+
+        </RelativeLayout>
+
+
+            style="@style/default_text"
+            />
         <Button
             android:id="@+id/btnAddress"
             android:layout_width="250dp"

@@ -116,14 +116,7 @@
             android:padding="10sp"
             style="@style/default_text"/>
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:layout_marginBottom="20sp"
-            android:text="我同意UD平台代取业务用户协议"
-            style="@style/default_text"
-            />
+
 
         <Button
             android:layout_width="250dp"
