@@ -43,10 +43,10 @@ public class AtyFetch extends AppCompatActivity {
 
         //数据
         data_list = new ArrayList<String>();
-        data_list.add("12：00~13：30");
-        data_list.add("15：10~15：40");
-        data_list.add("17：20~18：30");
-        data_list.add("20：10~21：40");
+        data_list.add("18：30~19：30");
+        data_list.add("19：30~20：30");
+        data_list.add("20：30~21：30");
+        data_list.add("21：30~22：30");
 
         //适配器 android.R.layout.simple_spinner_item
         arr_adapter= new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);

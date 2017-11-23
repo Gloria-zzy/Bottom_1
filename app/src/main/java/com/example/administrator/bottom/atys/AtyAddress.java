@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -52,6 +53,7 @@ public class AtyAddress extends Activity {
     private String area = "";
     private String building = "";
     private String room = "";
+    private CheckBox agree;
 
     //UI组件初始化
     private void bindView() {
@@ -63,6 +65,8 @@ public class AtyAddress extends Activity {
 //        etEmail = (EditText) findViewById(R.id.etEmail);
 //        etAddress = (EditText) findViewById(R.id.etAddress);
 
+        agree = (CheckBox) findViewById(R.id.rb_agree);
+        agree.setChecked(true);
         area_spinner = (Spinner) findViewById(R.id.area_spinner);
         building_spinner = (Spinner) findViewById(R.id.building_spinner);
         room_spinner = (Spinner) findViewById(R.id.room_spinner);
@@ -187,27 +191,31 @@ public class AtyAddress extends Activity {
             @Override
             public void onClick(View view) {
 
-                // 获得phoneNum
-                SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
-                String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
 
-                new UploadAddress(phone, school,area,building,room, new UploadAddress.SuccessCallback() {
+                if (agree.isChecked()) {
 
-                    @Override
-                    public void onSuccess() {
 
-                        Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
-                        startActivity(i);
+                    // 获得phoneNum
+                    SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
+                    String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
+
+                    new UploadAddress(phone, school, area, building, room, new UploadAddress.SuccessCallback() {
+
+                        @Override
+                        public void onSuccess() {
+
+                            Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
+                            startActivity(i);
 //                        finish();
 
-                    }
-                }, new UploadAddress.FailCallback() {
+                        }
+                    }, new UploadAddress.FailCallback() {
 
-                    @Override
-                    public void onFail() {
-                        Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
-                    }
-                });
+                        @Override
+                        public void onFail() {
+                            Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
+                        }
+                    });
 
 //                new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
 //                    @Override
@@ -220,6 +228,9 @@ public class AtyAddress extends Activity {
 //
 //                    }
 //                });
+                } else {
+                    Toast.makeText(AtyAddress.this, R.string.check_agreement, Toast.LENGTH_LONG).show();
+                }
             }
         });
 
