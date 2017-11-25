@@ -184,7 +184,6 @@ public class AtyAddress extends Activity {
 
                 if (agree.isChecked()) {
 
-
                     // 获得phoneNum
                     SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
                     String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
