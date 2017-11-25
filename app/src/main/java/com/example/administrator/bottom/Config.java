@@ -30,6 +30,9 @@ public class Config {
     public static final String KEY_ADDRESS_AREA = "address_area";
     public static final String KEY_ADDRESS_BUILDING = "address_building";
     public static final String KEY_ADDRESS_ROOM = "address_room";
+    public static final String KEY_ORDER_TIME = "order_time";
+    public static final String KEY_ORDER_LOCATION = "order_location";
+    public static final String KEY_ORDER_NOTE = "order_note";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_FAIL = 0;
@@ -42,6 +45,7 @@ public class Config {
     public static final String ACTION_LOGIN = "login";
     public static final String ACTION_UPLOAD_ADDRESS = "upload_address";
     public static final String ACTION_UPLOAD_CONTACTS = "upload_contacts";
+        public static final String ACTION_UPLOAD_ORDER = "upload_order";
     public static final String ACTION_UPLOAD_TOKEN = "upload_token";
     public static final String ACTION_DOWNLOAD_ADDRESS = "download_address";
     public static final String ACTION_TIMELINE = "timeline";
