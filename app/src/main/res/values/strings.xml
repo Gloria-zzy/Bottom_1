@@ -32,9 +32,6 @@
     <string name="fail_to_regist">用户名已存在</string>
     <string name="connecting">连接中...</string>
     <string name="connecting_to_server">正在连接服务器，请稍后...</string>
-    <string name="confirm_order">确认收货</string>
-    <string name="extend_order">延长收货</string>
-    <string name="complain">投诉</string>
     <string name="i_agree"><b><u>《UD平台业务用户协议》</u></b></string>
     <string name="agreemt">
         \t\t本服务条款是您与同城互助信息服务平台（包含同城互助网站、同城互助手机终端软件）的所有者-----科技有限公司及其关联公司之间就同城互助提供的信息服务等相关事宜所订立的合约或合同。
