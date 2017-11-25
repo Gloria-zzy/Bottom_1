@@ -21,6 +21,8 @@ public class Orderview extends RelativeLayout {
     private TextView order_loc;
     private Button order_cancel;
     private Button order_contact;
+    private Button order_change;
+    private TextView order_num;
 
     public Orderview(Context context){
         super(context);
@@ -34,6 +36,8 @@ public class Orderview extends RelativeLayout {
         order_loc = (TextView) findViewById(R.id.order_loc);
         order_cancel = (Button) findViewById(R.id.order_cancel);
         order_contact = (Button) findViewById(R.id.order_contact);
+        order_change = (Button) findViewById(R.id.order_change);
+        order_num = (TextView) findViewById(R.id.order_num);
     }
 
     public Orderview(Context context, AttributeSet attrs) {
@@ -67,11 +71,19 @@ public class Orderview extends RelativeLayout {
         this.order_loc.setText(order_loc);
     }
 
+    public void setOrder_num(String order_num){
+        this.order_num.setText(order_num);
+    }
+
     public void setCancelButtonListener(OnClickListener listener) {
         order_cancel.setOnClickListener(listener);
     }
 
     public void setContactButtonListener(OnClickListener listener) {
         order_contact.setOnClickListener(listener);
+    }
+
+    public void setChangeButtonListener(OnClickListener listener){
+        order_change.setOnClickListener(listener);
     }
 }
