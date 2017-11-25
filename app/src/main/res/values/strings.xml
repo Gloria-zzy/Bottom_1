@@ -35,4 +35,6 @@
     <string name="confirm_order">确认收货</string>
     <string name="extend_order">延长收货</string>
     <string name="complain">投诉</string>
+    <string name="locate_school">学校位置定位</string>
+    <string name="user_current_location">您当前的位置是：</string>
 </resources>

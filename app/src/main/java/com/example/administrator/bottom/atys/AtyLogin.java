@@ -92,7 +92,8 @@ public class AtyLogin extends Activity {
 
                         Config.loginStatus = 1;
 
-                        Intent i = new Intent(AtyLogin.this, AtyAddress.class);
+//                        Intent i = new Intent(AtyLogin.this, AtyAddress.class);
+                        Intent i = new Intent(AtyLogin.this, AtyLocateSchool.class);
                         startActivity(i);
                         finish();
 

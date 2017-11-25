@@ -41,9 +41,9 @@ public class FragMe extends Fragment {
         mTextView = (TextView) view.findViewById(R.id.func_btn);
         if (Config.loginStatus == 0) {
             mTextView.setText("登录");
-            mTextView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+                    mTextView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), AtyLogin.class);
                     startActivity(intent);
                 }
@@ -80,7 +80,6 @@ public class FragMe extends Fragment {
         }else{
             phone_num.setText("未登录");
         }
-
         return view;
     }
 }
