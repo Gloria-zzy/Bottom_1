@@ -42,7 +42,7 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
+        bindView();
 
 //        getSupportActionBar().hide();
 
@@ -52,12 +52,20 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         setIntent(intent);
         String page = intent.getStringExtra("page");
         Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
-        if (page == "home") {
+        if (page.equals("home")) {
 //            Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
+            showFragHome();
+        }else if(page.equals("order")){
+            showFragOrder();
+        }else if(page.equals("community")){
+            showFragCommunity();
+        }else if(page.equals("me")){
+            showFragMe();
+        }else{
             showFragHome();
         }
 
-        bindView();
+
 
 // Written by charles
 //        String token = Config.getCachedToken(this);

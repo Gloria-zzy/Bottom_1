@@ -55,7 +55,7 @@ public class FragMe extends Fragment {
                 public void onClick(View view) {
                     Config.loginStatus = 0;
                     Intent intent = new Intent(getActivity(), AtyMainFrame.class);
-                    intent.putExtra("returnType", "log");
+                    intent.putExtra("page", "me");
                     startActivity(intent);
                     Config.cacheToken(getActivity(), "");
                 }

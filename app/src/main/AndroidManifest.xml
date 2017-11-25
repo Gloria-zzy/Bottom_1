@@ -31,6 +31,7 @@
         <activity android:name=".atys.AtyMail" />
         <activity android:name=".atys.AtyAddressMng" />
         <activity android:name=".atys.AtyAgreement"></activity>
+        <activity android:name=".atys.AtyLocateSchool"></activity>
     </application>
 
 </manifest>

@@ -195,6 +195,7 @@ public class AtyAddress extends Activity {
                         public void onSuccess() {
 
                             Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
+                            i.putExtra("page","me");
                             startActivity(i);
 //                        finish();
 
