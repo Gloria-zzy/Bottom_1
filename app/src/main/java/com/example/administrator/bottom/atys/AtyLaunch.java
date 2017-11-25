@@ -14,8 +14,6 @@ import com.example.administrator.bottom.net.UploadToken;
 
 import static com.example.administrator.bottom.Config.APP_ID;
 
-import com.example.administrator.bottom.Config;
-
 public class AtyLaunch extends Activity {
 
     @Override
@@ -53,7 +51,10 @@ public class AtyLaunch extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(AtyLaunch.this, AtyMainFrame.class));
+                Intent intent = new Intent();
+                intent.setClass(AtyLaunch.this, AtyMainFrame.class);
+                intent.putExtra("page","home");
+                startActivity(intent);
                 AtyLaunch.this.finish();
             }
         }, time);

@@ -11,13 +11,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.bottom.frag.FragOrder;
+import com.example.administrator.bottom.R;
+import com.example.administrator.bottom.frag.FragCommunity;
 import com.example.administrator.bottom.frag.FragHome;
 import com.example.administrator.bottom.frag.FragMe;
-import com.example.administrator.bottom.frag.FragCommunity;
-import com.example.administrator.bottom.R;
-
-import java.util.List;
+import com.example.administrator.bottom.frag.FragOrder;
 
 /**
  * Created by Administrator on 2017/10/31.
@@ -40,21 +38,26 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        bindView();
+
 //        getSupportActionBar().hide();
 
         //      load page!!!
-        showFragHome();
-        String showType = getIntent().getStringExtra("returnType");
-        // have problem
-        if (showType == "log") {
-            Toast.makeText(AtyMainFrame.this, showType, Toast.LENGTH_LONG).show();
-            showFragMe();
+//        showFragHome();
+        Intent intent = getIntent();
+        setIntent(intent);
+        String page = intent.getStringExtra("page");
+        Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
+        if (page == "home") {
+//            Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
+            showFragHome();
         }
+
+        bindView();
 
 // Written by charles
 //        String token = Config.getCachedToken(this);
