@@ -1,9 +1,11 @@
-package com.example.administrator.bottom;
+package com.example.administrator.bottom.atys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+
+import com.example.administrator.bottom.R;
 
 public class AtyAgreement extends AppCompatActivity {
 

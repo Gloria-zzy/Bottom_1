@@ -1,30 +1,20 @@
 package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.bottom.AtyAgreement;
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
-import com.example.administrator.bottom.net.DownloadAddress;
-import com.example.administrator.bottom.net.GetCode;
-import com.example.administrator.bottom.net.Login;
-import com.example.administrator.bottom.net.Register;
 import com.example.administrator.bottom.net.UploadAddress;
-import com.example.administrator.bottom.tools.MD5Tool;
 
 import java.util.ArrayList;
 import java.util.List;
