@@ -45,7 +45,7 @@ public class AtyFetch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.aty_fetch);
+        setContentView(R.layout.aty_fetch2);
         getSupportActionBar().hide();
 
         bindView();

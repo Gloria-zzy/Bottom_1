@@ -5,8 +5,8 @@ import android.content.SharedPreferences.Editor;
 
 public class Config {
 
-    public static final String SERVER_URL = "http://101.132.190.102:8080/TestServer/api.jsp";
-
+//    public static final String SERVER_URL = "http://101.132.190.102:8080/TestServer/api.jsp";
+    public static final String SERVER_URL = "http://10.0.15.181:8080/TestServer/api.jsp";
 
     public static final String KEY_TOKEN = "token";
     public static final String KEY_ACTION = "action";
@@ -45,7 +45,7 @@ public class Config {
     public static final String ACTION_LOGIN = "login";
     public static final String ACTION_UPLOAD_ADDRESS = "upload_address";
     public static final String ACTION_UPLOAD_CONTACTS = "upload_contacts";
-        public static final String ACTION_UPLOAD_ORDER = "upload_order";
+    public static final String ACTION_UPLOAD_ORDER = "upload_order";
     public static final String ACTION_UPLOAD_TOKEN = "upload_token";
     public static final String ACTION_DOWNLOAD_ADDRESS = "download_address";
     public static final String ACTION_TIMELINE = "timeline";
