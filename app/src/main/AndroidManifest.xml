@@ -28,8 +28,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".atys.AtyFetch" />
-        <activity android:name=".atys.AtyMail"></activity>
+        <activity android:name=".atys.AtyMail" />
         <activity android:name=".atys.AtyAddressMng" />
+        <activity android:name=".atys.AtyAgreement"></activity>
     </application>
 
 </manifest>

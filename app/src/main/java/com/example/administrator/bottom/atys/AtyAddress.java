@@ -1,28 +1,20 @@
 package com.example.administrator.bottom.atys;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.widget.CheckBox;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
-import com.example.administrator.bottom.net.DownloadAddress;
-import com.example.administrator.bottom.net.GetCode;
-import com.example.administrator.bottom.net.Login;
-import com.example.administrator.bottom.net.Register;
 import com.example.administrator.bottom.net.UploadAddress;
-import com.example.administrator.bottom.tools.MD5Tool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +43,7 @@ public class AtyAddress extends Activity {
     private String area = "";
     private String building = "";
     private String room = "";
+    private CheckBox agree;
 
     //UI组件初始化
     private void bindView() {
@@ -62,6 +55,8 @@ public class AtyAddress extends Activity {
 //        etEmail = (EditText) findViewById(R.id.etEmail);
 //        etAddress = (EditText) findViewById(R.id.etAddress);
 
+        agree = (CheckBox) findViewById(R.id.rb_agree);
+        agree.setChecked(true);
         area_spinner = (Spinner) findViewById(R.id.area_spinner);
         building_spinner = (Spinner) findViewById(R.id.building_spinner);
         room_spinner = (Spinner) findViewById(R.id.room_spinner);
@@ -95,6 +90,13 @@ public class AtyAddress extends Activity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        findViewById(R.id.agreement).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AtyAddress.this, AtyAgreement.class));
             }
         });
 
@@ -179,27 +181,31 @@ public class AtyAddress extends Activity {
             @Override
             public void onClick(View view) {
 
-                // 获得phoneNum
-                SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
-                String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
 
-                new UploadAddress(phone, school,area,building,room, new UploadAddress.SuccessCallback() {
+                if (agree.isChecked()) {
 
-                    @Override
-                    public void onSuccess() {
 
-                        Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
-                        startActivity(i);
+                    // 获得phoneNum
+                    SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
+                    String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
+
+                    new UploadAddress(phone, school, area, building, room, new UploadAddress.SuccessCallback() {
+
+                        @Override
+                        public void onSuccess() {
+
+                            Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
+                            startActivity(i);
 //                        finish();
 
-                    }
-                }, new UploadAddress.FailCallback() {
+                        }
+                    }, new UploadAddress.FailCallback() {
 
-                    @Override
-                    public void onFail() {
-                        Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
-                    }
-                });
+                        @Override
+                        public void onFail() {
+                            Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
+                        }
+                    });
 
 //                new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
 //                    @Override
@@ -212,6 +218,9 @@ public class AtyAddress extends Activity {
 //
 //                    }
 //                });
+                } else {
+                    Toast.makeText(AtyAddress.this, R.string.check_agreement, Toast.LENGTH_LONG).show();
+                }
             }
         });
 

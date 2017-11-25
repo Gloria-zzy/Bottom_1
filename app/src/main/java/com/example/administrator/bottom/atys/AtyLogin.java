@@ -37,6 +37,12 @@ public class AtyLogin extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_login);
         bindView();
+        findViewById(R.id.back_to_home).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         getcodeBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override

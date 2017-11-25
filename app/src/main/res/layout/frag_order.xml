@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/border_clo"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/order_ll">
 
 
         <SearchView
@@ -22,21 +23,13 @@
             android:queryHint="@string/search_qryHint"
             android:textSize="18sp" />
 
-        <include
-            android:id="@+id/record1"
-            layout="@layout/mod_record" />
-        <include
-            android:id="@+id/record2"
-            layout="@layout/mod_record" />
-        <include
-            android:id="@+id/record3"
-            layout="@layout/mod_record" />
-        <include
-            android:id="@+id/record4"
-            layout="@layout/mod_record" />
-        <include
-            android:id="@+id/record5"
-            layout="@layout/mod_record" />
+        <com.example.administrator.bottom.custom.Orderview
+            android:id="@+id/order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.example.administrator.bottom.custom.Orderview>
+
 
     </LinearLayout>
 </ScrollView>
