@@ -53,12 +53,11 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         bindView();
 
         // by Charles
-        System.out.println("hellooooooooo:  " + page);
+
 
 //        Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
-        if (page != null && page.equals("home")) {
+        if (page != null) {
             if (page.equals("home")) {
-//            Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
                 showFragHome();
             } else if (page.equals("order")) {
                 showFragOrder();
@@ -67,11 +66,9 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
             } else if (page.equals("me")) {
                 showFragMe();
             } else {
+                System.out.println("hellooooooooo:" + page + "1111");
                 showFragHome();
             }
-
-            //by Charles
-            showFragHome();
         }
     }
 
