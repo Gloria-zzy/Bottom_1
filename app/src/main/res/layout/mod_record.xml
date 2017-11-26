@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="180dp"
     android:padding="6dip"
     android:paddingBottom="20dip"
     android:layout_marginBottom="2sp"
@@ -127,6 +127,46 @@
                 android:layout_marginTop="5dip"
                 android:paddingLeft="10sp"
                 android:text="(收获时间)"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:text="备注 :"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/order_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:paddingLeft="10sp"
+                android:text="(备注)"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:text="状态 :"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/order_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:paddingLeft="10sp"
+                android:text="(状态)"
                 android:textSize="13sp" />
         </LinearLayout>
 

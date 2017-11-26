@@ -5,8 +5,8 @@ import android.content.SharedPreferences.Editor;
 
 public class Config {
 
-    public static final String SERVER_URL = "http://101.132.190.102:8080/TestServer/api.jsp";
-//    public static final String SERVER_URL = "http://10.0.15.181:8080/TestServer/api.jsp";
+//    public static final String SERVER_URL = "http://101.132.190.102:8080/TestServer/api.jsp";
+    public static final String SERVER_URL = "http://172.20.10.8:8080/TestServer/api.jsp";
 
     public static final String KEY_TOKEN = "token";
     public static final String KEY_ACTION = "action";
@@ -26,13 +26,17 @@ public class Config {
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
     public static final String KEY_EMAIL = "item_email";
+
     public static final String KEY_ADDRESS_SCHOOL = "address_school";
     public static final String KEY_ADDRESS_AREA = "address_area";
     public static final String KEY_ADDRESS_BUILDING = "address_building";
     public static final String KEY_ADDRESS_ROOM = "address_room";
+
+    public static final String KEY_ORDER_NUMBER = "order_number";
     public static final String KEY_ORDER_TIME = "order_time";
     public static final String KEY_ORDER_LOCATION = "order_location";
     public static final String KEY_ORDER_NOTE = "order_note";
+    public static final String KEY_ORDER_STATUS = "order_status";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_FAIL = 0;

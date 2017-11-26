@@ -3,15 +3,14 @@ package com.example.administrator.bottom.atys;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.bottom.Config;
@@ -123,6 +122,7 @@ public class AtyFetch extends AppCompatActivity {
                     public void onSuccess() {
 
                         Intent i = new Intent(AtyFetch.this, AtyMainFrame.class);
+                        i.putExtra("page","order");
                         startActivity(i);
 //                        finish();
 

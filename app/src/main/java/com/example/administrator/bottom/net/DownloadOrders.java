@@ -5,8 +5,8 @@ import com.example.administrator.bottom.Config;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DownloadAddress {
-    public DownloadAddress(String phone, final SuccessCallback successCallback, final FailCallback failCallback) {
+public class DownloadOrders {
+    public DownloadOrders(String phone, final SuccessCallback successCallback, final FailCallback failCallback) {
         new NetConnection(Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
 
             @Override
@@ -17,7 +17,7 @@ public class DownloadAddress {
                     switch (obj.getInt(Config.KEY_STATUS)) {
                         case Config.RESULT_STATUS_SUCCESS:
                             if (successCallback != null) {
-                                successCallback.onSuccess(obj.getString(Config.KEY_ADDRESS_SCHOOL), obj.getString(Config.KEY_ADDRESS_AREA), obj.getString(Config.KEY_ADDRESS_BUILDING), obj.getString(Config.KEY_ADDRESS_ROOM));
+                                successCallback.onSuccess(obj.getString(Config.KEY_ORDER_NUMBER), obj.getString(Config.KEY_ORDER_TIME), obj.getString(Config.KEY_ORDER_LOCATION), obj.getString(Config.KEY_ORDER_NOTE),obj.getString(Config.KEY_ORDER_STATUS));
                             }
                             break;
 
@@ -45,7 +45,7 @@ public class DownloadAddress {
     }
 
     public static interface SuccessCallback {
-        void onSuccess(String school, String area, String building, String room);
+        void onSuccess(String number, String time, String loc, String note,String status);
     }
 
     public static interface FailCallback {
