@@ -82,7 +82,14 @@ public class FragOrder extends Fragment {
                 newov.setOrder_time(time);
                 newov.setOrder_loc(loc);
                 newov.setOrder_note(note);
-                newov.setOrder_status(status);
+                if(status.equals("0")){
+                    newov.setOrder_status("已结束");
+                }else if(status.equals("1")){
+                    newov.setOrder_status("正在送货");
+                }else if(status.equals("2")){
+                    newov.setOrder_status("订单异常");
+                }
+
                 newov.setCancelButtonListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
