@@ -168,15 +168,15 @@ public class AtyAddress extends Activity {
             }
         });
 
-        room = room_edittext.getText().toString();
+
 
         findViewById(R.id.btnAddress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
                 if (agree.isChecked()) {
 
+                    room = room_edittext.getText().toString();
                     // 获得phoneNum
                     SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
                     String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");

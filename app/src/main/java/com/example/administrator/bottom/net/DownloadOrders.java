@@ -2,8 +2,12 @@ package com.example.administrator.bottom.net;
 
 import com.example.administrator.bottom.Config;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DownloadOrders {
     public DownloadOrders(String phone, final SuccessCallback successCallback, final FailCallback failCallback) {
@@ -17,7 +21,23 @@ public class DownloadOrders {
                     switch (obj.getInt(Config.KEY_STATUS)) {
                         case Config.RESULT_STATUS_SUCCESS:
                             if (successCallback != null) {
-                                successCallback.onSuccess(obj.getString(Config.KEY_ORDER_NUMBER), obj.getString(Config.KEY_ORDER_TIME), obj.getString(Config.KEY_ORDER_LOCATION), obj.getString(Config.KEY_ORDER_NOTE),obj.getString(Config.KEY_ORDER_STATUS));
+                                ArrayList<Order> orders = new ArrayList<Order>();
+                                JSONArray orderJsonArray = obj
+                                        .getJSONArray(Config.KEY_ORDERS);
+                                JSONObject orderObj;
+                                for (int i = 0; i < orderJsonArray.length(); i++) {
+                                    orderObj = orderJsonArray.getJSONObject(i);
+                                    orders.add(new Order(
+                                                    orderObj.getString(Config.KEY_ORDER_NUMBER),
+                                                    orderObj.getString(Config.KEY_PHONE_NUM),
+                                                    orderObj.getString(Config.KEY_ORDER_TIME),
+                                                    orderObj.getString(Config.KEY_ORDER_LOCATION),
+                                                    orderObj.getString(Config.KEY_ORDER_NOTE),
+                                                    orderObj.getString(Config.KEY_ORDER_STATUS)
+                                            )
+                                    );
+                                }
+                                successCallback.onSuccess(orders);
                             }
                             break;
 
@@ -45,7 +65,7 @@ public class DownloadOrders {
     }
 
     public static interface SuccessCallback {
-        void onSuccess(String number, String time, String loc, String note,String status);
+        void onSuccess(ArrayList<Order> orders);
     }
 
     public static interface FailCallback {

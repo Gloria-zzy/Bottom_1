@@ -41,7 +41,7 @@ public class DownloadAddress {
                     failCallback.onFail();
                 }
             }
-        }, Config.KEY_ACTION, Config.ACTION_DOWNLOAD_ORDERS, Config.KEY_PHONE_NUM, phone);
+        }, Config.KEY_ACTION, Config.ACTION_DOWNLOAD_ADDRESS, Config.KEY_PHONE_NUM, phone);
     }
 
     public static interface SuccessCallback {

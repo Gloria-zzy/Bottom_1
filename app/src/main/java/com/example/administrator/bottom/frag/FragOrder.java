@@ -15,6 +15,10 @@ import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.custom.Orderview;
 import com.example.administrator.bottom.net.DownloadOrders;
+import com.example.administrator.bottom.net.Order;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.administrator.bottom.Config.APP_ID;
 
@@ -74,40 +78,48 @@ public class FragOrder extends Fragment {
         new DownloadOrders(phone, new DownloadOrders.SuccessCallback() {
 
             @Override
-            public void onSuccess(String number, String time, String loc, String note, String status) {
-                Orderview newov = new Orderview(getActivity());
-                ll.addView(newov);
-                newov.setOrder_intro("大件快递");
-                newov.setOrder_num(number);
-                newov.setOrder_time(time);
-                newov.setOrder_loc(loc);
-                newov.setOrder_note(note);
-                if(status.equals("0")){
-                    newov.setOrder_status("已结束");
-                }else if(status.equals("1")){
-                    newov.setOrder_status("正在送货");
-                }else if(status.equals("2")){
-                    newov.setOrder_status("订单异常");
-                }
+            public void onSuccess(ArrayList<Order> orders) {
+                for (Order o : orders)
+                {
+                    String number = o.getOrderNum();
+                    String time = o.getTime();
+                    String loc = o.getLocation();
+                    String note = o.getNote();
+                    String status = o.getStatus();
+                    Orderview newov = new Orderview(getActivity());
+                    ll.addView(newov);
+                    newov.setOrder_intro("大件快递");
+                    newov.setOrder_num(number);
+                    newov.setOrder_time(time);
+                    newov.setOrder_loc(loc);
+                    newov.setOrder_note(note);
+                    if(status.equals("0")){
+                        newov.setOrder_status("已结束");
+                    }else if(status.equals("1")){
+                        newov.setOrder_status("正在送货");
+                    }else if(status.equals("2")){
+                        newov.setOrder_status("订单异常");
+                    }
 
-                newov.setCancelButtonListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(getActivity(), "点击了取消按钮", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                newov.setContactButtonListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(getActivity(), "点击了联系按钮", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                newov.setCancelButtonListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(getActivity(), "点击了修改按钮", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    newov.setCancelButtonListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(getActivity(), "点击了取消按钮", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    newov.setContactButtonListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(getActivity(), "点击了联系按钮", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    newov.setCancelButtonListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(getActivity(), "点击了修改按钮", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         }, new DownloadOrders.FailCallback() {
 

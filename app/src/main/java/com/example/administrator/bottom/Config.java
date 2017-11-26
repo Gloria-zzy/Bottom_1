@@ -18,6 +18,7 @@ public class Config {
     public static final String KEY_PAGE = "page";
     public static final String KEY_PERPAGE = "perpage";
     public static final String KEY_TIMELINE = "timeline";
+    public static final String KEY_ORDERS = "orders";
     public static final String KEY_MSG_ID = "msgId";
     public static final String KEY_MSG = "msg";
     public static final String KEY_COMMENTS = "items";
