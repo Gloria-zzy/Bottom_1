@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,7 +37,7 @@ public class AtyAddress extends Activity {
 //    private TextView tvcode;
     private Spinner area_spinner;
     private Spinner building_spinner;
-    private Spinner room_spinner;
+    private EditText room_edittext;
     private List<String> data_list;
     private ArrayAdapter<String> arr_adapter;
     private String school = "南京信息工程大学";
@@ -59,7 +60,7 @@ public class AtyAddress extends Activity {
         agree.setChecked(true);
         area_spinner = (Spinner) findViewById(R.id.area_spinner);
         building_spinner = (Spinner) findViewById(R.id.building_spinner);
-        room_spinner = (Spinner) findViewById(R.id.room_spinner);
+        room_edittext = (EditText) findViewById(R.id.room_et);
     }
 
     //随机六位数字代号
@@ -115,10 +116,24 @@ public class AtyAddress extends Activity {
 
         //数据
         data_list = new ArrayList<String>();
+        data_list.add("硕园2栋");
+        data_list.add("硕园3栋");
+        data_list.add("硕园4栋");
+        data_list.add("硕园5栋");
         data_list.add("晖园11栋");
         data_list.add("晖园12栋");
         data_list.add("晖园13栋");
         data_list.add("晖园14栋");
+        data_list.add("沁园30栋");
+        data_list.add("沁园31栋");
+        data_list.add("沁园32栋");
+        data_list.add("沁园33栋");
+        data_list.add("沁园34栋");
+        data_list.add("沁园35栋");
+        data_list.add("沁园36栋");
+        data_list.add("沁园37栋");
+        data_list.add("沁园38栋");
+        data_list.add("沁园39栋");
 
         //适配器
         arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
@@ -127,19 +142,7 @@ public class AtyAddress extends Activity {
         //加载适配器
         building_spinner.setAdapter(arr_adapter);
 
-        //数据
-        data_list = new ArrayList<String>();
-        data_list.add("117");
-        data_list.add("118");
-        data_list.add("119");
-        data_list.add("120");
 
-        //适配器
-        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
-        //设置样式
-        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
-        //加载适配器
-        room_spinner.setAdapter(arr_adapter);
 
         area_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -165,17 +168,7 @@ public class AtyAddress extends Activity {
             }
         });
 
-        room_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                room = (String) room_spinner.getSelectedItem();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+        room = room_edittext.getText().toString();
 
         findViewById(R.id.btnAddress).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,7 +187,7 @@ public class AtyAddress extends Activity {
                         public void onSuccess() {
 
                             Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
-                            i.putExtra("page","me");
+                            i.putExtra("page", "me");
                             startActivity(i);
 //                        finish();
 

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.frag.FragCommunity;
@@ -51,7 +50,6 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         Intent intent = getIntent();
         setIntent(intent);
         String page = intent.getStringExtra("page");
-        Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
         if (page.equals("home")) {
 //            Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
             showFragHome();

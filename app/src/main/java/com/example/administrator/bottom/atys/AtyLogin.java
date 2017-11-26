@@ -41,6 +41,7 @@ public class AtyLogin extends Activity {
             @Override
             public void onClick(View view) {
                 finish();
+                overridePendingTransition(R.transition.switch_still,R.transition.switch_slide_out_right);
             }
         });
         getcodeBtn.setOnClickListener(new View.OnClickListener() {

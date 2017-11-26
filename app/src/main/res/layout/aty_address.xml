@@ -139,7 +139,7 @@
                 android:layout_alignBottom="@+id/area_spinner"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="4dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
                 style="@style/spinner_btn" />
@@ -166,34 +166,41 @@
                 android:layout_alignBottom="@+id/building_spinner"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="4dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="24dp"
                 style="@style/spinner_btn"/>
         </RelativeLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
-            android:text="请选择您的宿舍号："
-            style="@style/default_text" />
+            android:text="请输入您的宿舍号："
+            style="@style/default_text"
+            />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <Spinner
-                android:id="@+id/room_spinner"
-                style="@style/spinner_bar" />
+            <EditText
+                android:id="@+id/room_et"
+                style="@style/spinner_bar"
+                android:hint="如：118"
+                android:paddingTop="3sp"
+                android:paddingLeft="7sp"
+                android:inputType="number"
+                android:singleLine="true"/>
 
-            <ImageView
-                android:layout_alignBottom="@+id/room_spinner"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="2dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="24dp"
-                style="@style/spinner_btn"/>
+            <!--<ImageView-->
+                <!--android:layout_alignBottom="@+id/room_spinner"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginBottom="2dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_marginRight="24dp"-->
+                <!--style="@style/spinner_btn"/>-->
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="wrap_content"
