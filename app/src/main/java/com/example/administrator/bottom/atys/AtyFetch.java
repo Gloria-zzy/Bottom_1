@@ -124,10 +124,11 @@ public class AtyFetch extends AppCompatActivity {
                     @Override
                     public void onSuccess() {
 
+                        Toast.makeText(AtyFetch.this,"提交成功！", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(AtyFetch.this, AtyMainFrame.class);
                         i.putExtra("page","order");
                         startActivity(i);
-//                        finish();
+                        finish();
 
                     }
                 }, new UploadOrder.FailCallback() {
