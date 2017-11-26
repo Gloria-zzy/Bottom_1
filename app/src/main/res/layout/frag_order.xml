@@ -5,31 +5,79 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/border_clo"
         android:orientation="vertical"
-        android:id="@+id/order_ll">
+        android:background="@color/border_clo">
 
-
-        <SearchView
-            android:id="@+id/searchView"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/order_ll"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/searchview_line"
-            android:gravity="center"
-            android:queryHint="@string/search_qryHint"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content"
+            android:background="@color/border_clo"
+            android:orientation="vertical">
 
-        <!--<com.example.administrator.bottom.custom.Orderview-->
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/searchview_line"
+                android:gravity="center"
+                android:queryHint="@string/search_qryHint"
+                android:textSize="18sp" />
+
+            <!--<com.example.administrator.bottom.custom.Orderview-->
             <!--android:id="@+id/order"-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content">-->
 
-        <!--</com.example.administrator.bottom.custom.Orderview>-->
+            <!--</com.example.administrator.bottom.custom.Orderview>-->
 
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5sp"
+            android:gravity="center">
+
+            <View
+                android:layout_width="100sp"
+                android:layout_height="1dip"
+                android:background="#000"
+                android:padding="1dip"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_gravity="center_vertical"
+                android:text="历史订单"/>
+
+            <View
+                android:layout_width="100sp"
+                android:layout_height="1dip"
+                android:background="#000"
+                android:padding="1dip"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/history_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/border_clo"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
