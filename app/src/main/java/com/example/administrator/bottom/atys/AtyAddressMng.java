@@ -77,145 +77,110 @@ public class AtyAddressMng extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.aty_address_mng);
+        if (Config.loginStatus == 0) {
+            setContentView(R.layout.aty_unlog);
+            findViewById(R.id.to_login).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(AtyAddressMng.this, AtyLogin.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
+                }
+            });
 
-        bindView();
-        findViewById(R.id.Address_mng_back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                overridePendingTransition(R.transition.switch_still,R.transition.switch_slide_out_right);
-            }
-        });
+            findViewById(R.id.back_to_home).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(AtyAddressMng.this, AtyMainFrame.class);
+                    i.putExtra("page", "me");
+                    startActivity(i);
+                }
+            });
+        } else {
+            setContentView(R.layout.aty_address_mng);
 
-        //数据
-        data_list = new ArrayList<String>();
-        data_list.add("东苑");
-        data_list.add("中苑");
-        data_list.add("西苑");
+            bindView();
+            findViewById(R.id.Address_mng_back).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    finish();
+                    overridePendingTransition(R.transition.switch_still, R.transition.switch_slide_out_right);
+                }
+            });
 
-        //适配器
-        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
-        //设置样式
-        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
-        //加载适配器
-        area_spinner.setAdapter(arr_adapter);
+            //数据
+            data_list = new ArrayList<String>();
+            data_list.add("东苑");
+            data_list.add("中苑");
+            data_list.add("西苑");
 
-        //数据
-        data_list = new ArrayList<String>();
-        data_list.add("晖园11栋");
-        data_list.add("晖园12栋");
-        data_list.add("晖园13栋");
-        data_list.add("晖园14栋");
+            //适配器
+            arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+            //设置样式
+            arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
+            //加载适配器
+            area_spinner.setAdapter(arr_adapter);
 
-        //适配器
-        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
-        //设置样式
-        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
-        //加载适配器
-        building_spinner.setAdapter(arr_adapter);
+            //数据
+            data_list = new ArrayList<String>();
+            data_list.add("晖园11栋");
+            data_list.add("晖园12栋");
+            data_list.add("晖园13栋");
+            data_list.add("晖园14栋");
 
-        //数据
-        data_list = new ArrayList<String>();
-        data_list.add("117");
-        data_list.add("118");
-        data_list.add("119");
-        data_list.add("120");
+            //适配器
+            arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+            //设置样式
+            arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
+            //加载适配器
+            building_spinner.setAdapter(arr_adapter);
 
-        //适配器
-        arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
-        //设置样式
-        arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
-        //加载适配器
-        room_spinner.setAdapter(arr_adapter);
+            //数据
+            data_list = new ArrayList<String>();
+            data_list.add("117");
+            data_list.add("118");
+            data_list.add("119");
+            data_list.add("120");
 
-        //show current address!!!!
-        address = (TextView) findViewById(R.id.address_text);
-        // 获得phoneNum
-        SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
-        String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
-        new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
+            //适配器
+            arr_adapter = new ArrayAdapter<String>(this, R.layout.item_spinner, data_list);
+            //设置样式
+            arr_adapter.setDropDownViewResource(R.layout.item_spinner_dropdown);
+            //加载适配器
+            room_spinner.setAdapter(arr_adapter);
 
-            @Override
-            public void onSuccess(String school, String area, String building, String room) {
-                address.setText(school + area + building + room);
-                setSpinner(area, building, room);
-            }
-        }, new DownloadAddress.FailCallback() {
+            //show current address!!!!
+            address = (TextView) findViewById(R.id.address_text);
+            // 获得phoneNum
+            SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
+            String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
+            new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
 
-            @Override
-            public void onFail() {
-                Toast.makeText(AtyAddressMng.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
-            }
-        });
+                @Override
+                public void onSuccess(String school, String area, String building, String room) {
+                    address.setText(school + area + building + room);
+                    setSpinner(area, building, room);
+                }
+            }, new DownloadAddress.FailCallback() {
 
-
-        //change address!!!!
-        findViewById(R.id.btn_change_Address).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(AtyAddressMng.this, AtyMainFrame.class);
-                i.putExtra("page","me");
-                startActivity(i);
-                finish();
-            }
-        });
+                @Override
+                public void onFail() {
+                    Toast.makeText(AtyAddressMng.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
+                }
+            });
 
 
-//        findViewById(R.id.Register_back).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
-
-//        bindView();
-//
-//        //随机代号事件
-//        tvcode.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String s = randomCode();
-//                String code = "您的代号：" + s;
-//                tvcode.setText(code);
-//            }
-//        });
-//
-//        findViewById(R.id.btnRegister).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View arg0) {
-//                if (TextUtils.isEmpty(etUserName.getText())) {
-//                    Toast.makeText(AtyAddress.this, R.string.username_cannot_be_empty, Toast.LENGTH_LONG).show();
-//                    return;
-//                }
-//                if (TextUtils.isEmpty(etPassword_1.getText())) {
-//                    Toast.makeText(AtyAddress.this, R.string.password_cannot_be_empty, Toast.LENGTH_LONG).show();
-//                    return;
-//                }
-//                if (!etPassword_1.getText().toString().equals(etPassword_2.getText().toString())) {
-//                    Toast.makeText(AtyAddress.this, R.string.password_cannot_be_dismatch, Toast.LENGTH_LONG).show();
-//                    return;
-//                }
-//                if (TextUtils.isEmpty(etPhoneNumber.getText())) {
-//                    Toast.makeText(AtyAddress.this, R.string.phone_num_cannot_be_empty, Toast.LENGTH_LONG).show();
-//                    return;
-//                }
-//                final ProgressDialog pd = ProgressDialog.show(AtyAddress.this, getResources().getString(R.string.connecting), getResources().getString(R.string.connecting_to_server));
-//                new Register(etUserName.getText().toString(), etPassword_1.getText().toString(), etPhoneNumber.getText().toString(), etEmail.getText().toString(), etAddress.getText().toString(), new Register.SuccessCallback() {
-//                    @Override
-//                    public void onSuccess(String token) {
-//                        pd.dismiss();
-//                        Toast.makeText(AtyAddress.this, R.string.suc_to_regist, Toast.LENGTH_LONG).show();
-//                    }
-//                }, new Register.FailCallback() {
-//                    @Override
-//                    public void onFail() {
-//                        pd.dismiss();
-//                        Toast.makeText(AtyAddress.this, R.string.fail_to_regist, Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//            }
-//        });
+            //change address!!!!
+            findViewById(R.id.btn_change_Address).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(AtyAddressMng.this, AtyMainFrame.class);
+                    i.putExtra("page", "me");
+                    startActivity(i);
+                    finish();
+                }
+            });
+        }
     }
 
     void setSpinner(String area, String building, String room) {

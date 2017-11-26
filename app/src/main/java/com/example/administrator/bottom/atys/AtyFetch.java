@@ -113,6 +113,9 @@ public class AtyFetch extends AppCompatActivity {
             public void onClick(View view) {
                 // 获得phoneNum
                 note = note_edittext.getText().toString();
+                if(note.equals("")){
+                    note = "none";
+                }
                 SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
                 String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
 
