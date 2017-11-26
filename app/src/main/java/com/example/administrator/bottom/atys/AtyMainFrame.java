@@ -51,13 +51,19 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         Intent intent = getIntent();
         setIntent(intent);
         String page = intent.getStringExtra("page");
-        Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
-        if (page == "home") {
+        bindView();
+
+        // by Charles
+        System.out.println("hellooooooooo:  " + page);
+
+//        Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
+        if (page != null && page.equals("home")) {
 //            Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
             showFragHome();
         }
 
-        bindView();
+        //by Charles
+        showFragHome();
 
 // Written by charles
 //        String token = Config.getCachedToken(this);
@@ -214,4 +220,3 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         transaction.commit();
     }
 }
-

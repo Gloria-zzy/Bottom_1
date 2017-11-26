@@ -48,6 +48,7 @@ public class Config {
     public static final String ACTION_UPLOAD_ORDER = "upload_order";
     public static final String ACTION_UPLOAD_TOKEN = "upload_token";
     public static final String ACTION_DOWNLOAD_ADDRESS = "download_address";
+    public static final String ACTION_DOWNLOAD_ORDERS = "download_orders";
     public static final String ACTION_TIMELINE = "timeline";
     public static final String ACTION_PUBLISH = "publish";
     public static final String ACTION_GET_COMMENT = "get_comment";
@@ -68,7 +69,6 @@ public class Config {
                 .edit();
         e.putString(KEY_TOKEN, token);
         e.commit();
-
     }
 
     public static String getCachedPhoneNum(Context context) {

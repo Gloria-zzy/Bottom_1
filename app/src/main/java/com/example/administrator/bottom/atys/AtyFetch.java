@@ -107,12 +107,13 @@ public class AtyFetch extends AppCompatActivity {
 
             }
         });
-        note = note_edittext.getText().toString();
+
 
         findViewById(R.id.fetch_summit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 获得phoneNum
+                note = note_edittext.getText().toString();
                 SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
                 String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
 
