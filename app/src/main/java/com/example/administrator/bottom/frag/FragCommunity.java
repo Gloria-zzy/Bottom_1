@@ -1,9 +1,9 @@
 package com.example.administrator.bottom.frag;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -12,13 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
+import com.example.administrator.bottom.atys.AtyLogin;
+import com.example.administrator.bottom.atys.AtyMainFrame;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Created by Administrator on 2017/10/29.
@@ -42,31 +42,55 @@ public class FragCommunity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_community, container, false);
+        View view;
+        if (Config.loginStatus == 0) {
+            view = inflater.inflate(R.layout.aty_unlog, container, false);
+            view.findViewById(R.id.to_login).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), AtyLogin.class);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
+                }
+            });
 
-        pager = (ViewPager) view.findViewById(R.id.pager);
-        tv1 = (TextView) view.findViewById(R.id.page1);
-        tv1.setTextColor(Color.BLUE);
-        tv2 = (TextView) view.findViewById(R.id.page2);
-        tv3 = (TextView) view.findViewById(R.id.page3);
-        tv1.setOnClickListener(new MyClickListener(0));
-        tv2.setOnClickListener(new MyClickListener(1));
-        tv3.setOnClickListener(new MyClickListener(2));
-        tvs.add(tv1);
-        tvs.add(tv2);
-        tvs.add(tv3);
+            view.findViewById(R.id.back_to_home).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getActivity(), AtyMainFrame.class);
+                    i.putExtra("page", "home");
+                    startActivity(i);
+                }
+            });
+        } else {
+            view = inflater.inflate(R.layout.frag_community, container, false);
+            pager = (ViewPager) view.findViewById(R.id.pager);
+            tv1 = (TextView) view.findViewById(R.id.page1);
+            tv1.setTextColor(Color.BLUE);
+            tv2 = (TextView) view.findViewById(R.id.page2);
+            tv3 = (TextView) view.findViewById(R.id.page3);
+            tv1.setOnClickListener(new MyClickListener(0));
+            tv2.setOnClickListener(new MyClickListener(1));
+            tv3.setOnClickListener(new MyClickListener(2));
+            tvs.add(tv1);
+            tvs.add(tv2);
+            tvs.add(tv3);
 //        初始化ViewPager组件
-        initView();
-        initViewPager();
+            initView();
+            initViewPager();
+        }
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        tv1.setOnClickListener(new MyClickListener(0));
-        tv2.setOnClickListener(new MyClickListener(1));
-        tv3.setOnClickListener(new MyClickListener(2));
+        if (Config.loginStatus == 1) {
+            tv1.setOnClickListener(new MyClickListener(0));
+            tv2.setOnClickListener(new MyClickListener(1));
+            tv3.setOnClickListener(new MyClickListener(2));
+        }
+
     }
 
     private class MyClickListener implements View.OnClickListener {

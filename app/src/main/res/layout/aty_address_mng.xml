@@ -49,7 +49,7 @@
             android:paddingTop="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="南京信息工程大学东苑晖园12栋118"
+            android:text="未知"
             style="@style/default_text"/>
 
     </LinearLayout>
