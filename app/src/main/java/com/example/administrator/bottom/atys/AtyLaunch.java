@@ -19,6 +19,7 @@ public class AtyLaunch extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //加载启动图片
         setContentView(R.layout.aty_launch);
         Integer time = 3000;    //设置等待时间，单位为毫秒

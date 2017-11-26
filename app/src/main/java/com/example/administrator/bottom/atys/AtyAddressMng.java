@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.example.administrator.bottom.Config;
 import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.net.DownloadAddress;
-import com.example.administrator.bottom.net.UploadAddress;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,6 +84,7 @@ public class AtyAddressMng extends Activity {
             @Override
             public void onClick(View view) {
                 finish();
+                overridePendingTransition(R.transition.switch_still,R.transition.switch_slide_out_right);
             }
         });
 
@@ -155,6 +155,7 @@ public class AtyAddressMng extends Activity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(AtyAddressMng.this, AtyMainFrame.class);
+                i.putExtra("page","me");
                 startActivity(i);
                 finish();
             }

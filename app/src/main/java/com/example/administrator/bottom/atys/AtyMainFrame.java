@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.frag.FragCommunity;
@@ -42,7 +41,7 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
+        bindView();
 
 //        getSupportActionBar().hide();
 
@@ -58,25 +57,22 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
 
 //        Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
         if (page != null && page.equals("home")) {
+            if (page.equals("home")) {
 //            Toast.makeText(AtyMainFrame.this, page, Toast.LENGTH_LONG).show();
+                showFragHome();
+            } else if (page.equals("order")) {
+                showFragOrder();
+            } else if (page.equals("community")) {
+                showFragCommunity();
+            } else if (page.equals("me")) {
+                showFragMe();
+            } else {
+                showFragHome();
+            }
+
+            //by Charles
             showFragHome();
         }
-
-        //by Charles
-        showFragHome();
-
-// Written by charles
-//        String token = Config.getCachedToken(this);
-//        String phone_num = Config.getCachedPhoneNum(this);
-//
-//        if (token != null && phone_num != null) {
-//            Intent i = new Intent(this, AtyTimeline.class);
-//            i.putExtra(Config.KEY_TOKEN, token);
-//            i.putExtra(Config.KEY_PHONE_NUM, phone_num);
-//            startActivity(i);
-//        } else {
-//            startActivity(new Intent(this, FragLogin.class));
-//        }
     }
 
     //UI组件初始化与事件绑定

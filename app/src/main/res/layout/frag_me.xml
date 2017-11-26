@@ -32,7 +32,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="70dp"-->
 
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -44,8 +43,9 @@
                 android:layout_marginStart="28dp"
                 android:layout_toEndOf="@+id/head"
                 android:layout_toRightOf="@+id/head"
-                android:text="不淘气的小可爱"
+                android:text="未登录"
                 android:textSize="20dp" />
+
         </RelativeLayout>
 
 

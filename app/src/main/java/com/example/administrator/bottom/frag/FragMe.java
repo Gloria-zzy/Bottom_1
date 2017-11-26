@@ -46,6 +46,7 @@ public class FragMe extends Fragment {
                         public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), AtyLogin.class);
                     startActivity(intent);
+                    getActivity().overridePendingTransition(R.transition.switch_slide_in_right,R.transition.switch_still);
                 }
             });
         } else {
@@ -55,7 +56,7 @@ public class FragMe extends Fragment {
                 public void onClick(View view) {
                     Config.loginStatus = 0;
                     Intent intent = new Intent(getActivity(), AtyMainFrame.class);
-                    intent.putExtra("returnType", "log");
+                    intent.putExtra("page", "me");
                     startActivity(intent);
                     Config.cacheToken(getActivity(), "");
                 }
@@ -68,6 +69,7 @@ public class FragMe extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), AtyAddressMng.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.transition.switch_slide_in_right,R.transition.switch_still);
             }
         });
 
