@@ -69,6 +69,7 @@ public class AtyAddressMng extends Activity {
                     Intent i = new Intent(AtyAddressMng.this, AtyMainFrame.class);
                     i.putExtra("page", "me");
                     startActivity(i);
+                    overridePendingTransition(R.transition.switch_still, R.transition.switch_slide_out_right);
                 }
             });
         } else {
@@ -181,7 +182,7 @@ public class AtyAddressMng extends Activity {
                         @Override
                         public void onSuccess() {
 
-                            Toast.makeText(AtyAddressMng.this,"修改成功！", Toast.LENGTH_LONG).show();
+                            Toast.makeText(AtyAddressMng.this, "修改成功！", Toast.LENGTH_LONG).show();
                             Intent i = new Intent(AtyAddressMng.this, AtyAddressMng.class);
                             startActivity(i);
                             finish();
