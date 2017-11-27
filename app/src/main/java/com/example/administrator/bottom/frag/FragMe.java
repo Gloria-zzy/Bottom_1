@@ -16,6 +16,7 @@ import com.example.administrator.bottom.R;
 import com.example.administrator.bottom.atys.AtyAddressMng;
 import com.example.administrator.bottom.atys.AtyLogin;
 import com.example.administrator.bottom.atys.AtyMainFrame;
+import com.example.administrator.bottom.atys.AtyUnlog;
 
 import static com.example.administrator.bottom.Config.APP_ID;
 
@@ -67,9 +68,16 @@ public class FragMe extends Fragment {
         view.findViewById(R.id.address_mng).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), AtyAddressMng.class);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.transition.switch_slide_in_right,R.transition.switch_still);
+                if(Config.loginStatus ==1 ){
+                    Intent intent = new Intent(getActivity(), AtyAddressMng.class);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.transition.switch_slide_in_right,R.transition.switch_still);
+                }else{
+                    Intent intent = new Intent(getActivity(), AtyUnlog.class);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.transition.switch_slide_in_right,R.transition.switch_still);
+                }
+
             }
         });
 
