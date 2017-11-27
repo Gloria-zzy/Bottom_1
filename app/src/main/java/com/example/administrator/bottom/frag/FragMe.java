@@ -65,7 +65,6 @@ public class FragMe extends Fragment {
         }
 
 
-
         //address mng
         view.findViewById(R.id.address_mng).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,11 +76,18 @@ public class FragMe extends Fragment {
 //                    getActivity().overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
 //                } else
                 {
-                    Intent intent = new Intent(getActivity(), AtyAddressMng.class);
-                    startActivity(intent);
                     getActivity().overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
-                }
+                    if (Config.loginStatus == 1) {
+                        Intent intent = new Intent(getActivity(), AtyAddressMng.class);
+                        startActivity(intent);
+                        getActivity().overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
+                    } else {
+                        Intent intent = new Intent(getActivity(), AtyUnlog.class);
+                        startActivity(intent);
+                        getActivity().overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
+                    }
 
+                }
             }
         });
 
