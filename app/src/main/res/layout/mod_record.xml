@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
-                android:text="收获地点 :"
+                android:text="收货地点 :"
                 android:textSize="13sp" />
             <TextView
                 android:id="@+id/order_loc"
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
                 android:paddingLeft="10sp"
-                android:text="(收获地点)"
+                android:text="(收货地点)"
                 android:textSize="13sp" />
         </LinearLayout>
 
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
-                android:text="收获时间 :"
+                android:text="收货时间 :"
                 android:textSize="13sp" />
             <TextView
                 android:id="@+id/order_time"
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
                 android:paddingLeft="10sp"
-                android:text="(收获时间)"
+                android:text="(收货时间)"
                 android:textSize="13sp" />
         </LinearLayout>
 
