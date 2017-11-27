@@ -189,7 +189,6 @@ public class AtyAddress extends Activity {
                             Intent i = new Intent(AtyAddress.this, AtyMainFrame.class);
                             i.putExtra("page", "me");
                             startActivity(i);
-//                        finish();
 
                         }
                     }, new UploadAddress.FailCallback() {
@@ -199,18 +198,6 @@ public class AtyAddress extends Activity {
                             Toast.makeText(AtyAddress.this, R.string.fail_to_commit, Toast.LENGTH_LONG).show();
                         }
                     });
-
-//                new DownloadAddress(phone, new DownloadAddress.SuccessCallback() {
-//                    @Override
-//                    public void onSuccess(String school, String area, String building, String room) {
-//                        System.out.println("school:" + school + "\narea:" + area + "\nbuilding:" + building + "\nroom:" + room);
-//                    }
-//                }, new DownloadAddress.FailCallback() {
-//                    @Override
-//                    public void onFail() {
-//
-//                    }
-//                });
                 } else {
                     Toast.makeText(AtyAddress.this, R.string.check_agreement, Toast.LENGTH_LONG).show();
                 }
