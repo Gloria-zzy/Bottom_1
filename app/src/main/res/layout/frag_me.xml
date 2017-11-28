@@ -91,8 +91,9 @@
             <LinearLayout style="@style/single_layout">
 
                 <TextView
+                    android:id="@+id/scanner"
                     style="@style/usertext"
-                    android:text="辅助功能" />
+                    android:text="扫描二维码" />
 
                 <ImageView style="@style/img_arrow" />
             </LinearLayout>

@@ -31,7 +31,6 @@ public class FragHome extends Fragment {
 
     }
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,18 +45,17 @@ public class FragHome extends Fragment {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
 
-
         get_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 if (Config.loginStatus == 0) {
                     Intent intent = new Intent(getActivity(), AtyUnlog.class);
                     startActivity(intent);
                     getActivity().overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
                 } else {
                     startActivityForResult(new Intent(getActivity(), AtyFetch.class), Activity.RESULT_FIRST_USER);
+                    getActivity().overridePendingTransition(R.transition.switch_slide_in_right, R.transition.switch_still);
                 }
             }
         });
@@ -67,7 +65,6 @@ public class FragHome extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 startActivityForResult(new Intent(getActivity(), AtyMail.class), Activity.RESULT_FIRST_USER);
             }
         });

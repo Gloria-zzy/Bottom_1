@@ -30,6 +30,7 @@ public class AtyUnlog extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                overridePendingTransition(R.transition.switch_still,R.transition.switch_slide_out_right);
             }
         });
     }

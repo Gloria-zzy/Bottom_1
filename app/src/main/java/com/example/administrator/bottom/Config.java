@@ -6,6 +6,8 @@ import android.content.SharedPreferences.Editor;
 public class Config {
 
     public static final String SERVER_URL = "http://101.132.190.102:8080/TestServer/api.jsp";
+//    public static final String SERVER_URL = "http://10.0.171.71:8080/TestServer/api.jsp";
+
 //    public static final String SERVER_URL = "http://10.0.209.67:8080/TestServer/api.jsp";
 
     public static final String KEY_TOKEN = "token";
