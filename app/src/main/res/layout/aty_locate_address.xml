@@ -62,9 +62,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="40dp"
-            android:text="浦口区"
+            android:text="定位"
             android:textColor="#07e"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableRight="@drawable/item_locate"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/aty_locate_address_school"

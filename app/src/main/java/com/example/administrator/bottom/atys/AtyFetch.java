@@ -52,7 +52,7 @@ public class AtyFetch extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-            }
+        }
         });
 
         //数据
