@@ -60,6 +60,7 @@ public class Config {
     public static final String ACTION_PUBLISH = "publish";
     public static final String ACTION_GET_COMMENT = "get_comment";
     public static final String ACTION_REGIST = "regist";
+    public static final String ACTION_COMPLETE_ORDER = "complete_order";
 
     public static final int ACTIVITY_RESULT_NEED_REFRESH = 10000;
 
