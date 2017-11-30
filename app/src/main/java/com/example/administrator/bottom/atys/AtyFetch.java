@@ -19,6 +19,7 @@ import com.example.administrator.bottom.net.UploadOrder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.text.SimpleDateFormat;
 
 import static com.example.administrator.bottom.Config.APP_ID;
 
@@ -111,6 +112,10 @@ public class AtyFetch extends AppCompatActivity {
         findViewById(R.id.fetch_summit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String date = sDateFormat.format(new java.util.Date());
+
                 // 获得phoneNum
                 note = note_edittext.getText().toString();
                 if(note.equals("")){
@@ -119,7 +124,7 @@ public class AtyFetch extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences(APP_ID, Context.MODE_PRIVATE);
                 String phone = sharedPreferences.getString(Config.KEY_PHONE_NUM, "");
 
-                new UploadOrder(phone, time, loc, note, new UploadOrder.SuccessCallback() {
+                new UploadOrder(phone, time, loc, note,date, new UploadOrder.SuccessCallback() {
 
                     @Override
                     public void onSuccess() {
