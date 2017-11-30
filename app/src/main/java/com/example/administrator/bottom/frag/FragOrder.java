@@ -78,7 +78,12 @@ public class FragOrder extends Fragment {
 
     public void fresh(){
 
-        System.out.println("111111111111111111111111111111111111111111111111");
+        if(ll != null){
+            ll.removeAllViews();
+        }
+        if(history != null){
+            history.removeAllViews();
+        }
         new DownloadOrders(phone, new DownloadOrders.SuccessCallback() {
 
 
