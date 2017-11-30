@@ -7,7 +7,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DownloadOrders {
     public DownloadOrders(String phone, final SuccessCallback successCallback, final FailCallback failCallback) {
@@ -33,7 +32,8 @@ public class DownloadOrders {
                                                     orderObj.getString(Config.KEY_ORDER_TIME),
                                                     orderObj.getString(Config.KEY_ORDER_LOCATION),
                                                     orderObj.getString(Config.KEY_ORDER_NOTE),
-                                                    orderObj.getString(Config.KEY_ORDER_STATUS)
+                                                    orderObj.getString(Config.KEY_ORDER_STATUS),
+                                                    orderObj.getString(Config.KEY_ORDER_DATE)
                                             )
                                     );
                                 }

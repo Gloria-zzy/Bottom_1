@@ -96,13 +96,15 @@ public class FragOrder extends Fragment {
                     String loc = o.getLocation();
                     String note = o.getNote();
                     String status = o.getStatus();
+                    String date = o.getDate();
                     final Orderview newov = new Orderview(getActivity());
 
-                    newov.setOrder_intro("大件快递");
+                    newov.setOrder_intro("小件快递");
                     newov.setOrder_num(number);
                     newov.setOrder_time(time);
                     newov.setOrder_loc(loc);
                     newov.setNum(number);
+                    newov.setTime(date);
                     if (note.equals("none")) {
                         note = "无";
                     }

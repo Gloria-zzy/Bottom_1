@@ -39,6 +39,7 @@ public class Config {
     public static final String KEY_ORDER_TIME = "order_time";
     public static final String KEY_ORDER_LOCATION = "order_location";
     public static final String KEY_ORDER_NOTE = "order_note";
+    public static final String KEY_ORDER_DATE = "order_date";
     public static final String KEY_ORDER_STATUS = "order_status";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
