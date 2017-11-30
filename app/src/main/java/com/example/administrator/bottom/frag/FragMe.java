@@ -142,12 +142,11 @@ public class FragMe extends Fragment {
                     }
                     @Override
                     public void onFailed(int requestCode, @NonNull List<String> deniedPermissions) {
+                        Uri packageURI = Uri.parse("package:" + getActivity().getPackageName());
+                        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, packageURI);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-//                        Uri packageURI = Uri.parse("package:" + getPackageName());
-//                        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, packageURI);
-//                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//
-//                        startActivity(intent);
+                        startActivity(intent);
 
                         Toast.makeText(getActivity(), "没有权限无法扫描呦", Toast.LENGTH_LONG).show();
                     }
