@@ -133,9 +133,12 @@ public class AtyMainFrame extends Activity implements View.OnClickListener {
                 tabGet.setSelected(true);
                 if (fragOrder == null) {
                     fragOrder = new FragOrder();
+                    fragOrder.fresh();
                     transaction.add(R.id.fragment_container, fragOrder);
                 } else {
+                    fragOrder.fresh();
                     transaction.show(fragOrder);
+
                 }
                 break;
 

@@ -318,6 +318,10 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback,
             intent.setAction(Intent.ACTION_PICK);
             intent.setType("image/*");
             startActivityForResult(intent, Constant.REQUEST_IMAGE);
+        } else if(id == R.id.back){
+//            Intent i = new Intent(CaptureActivity.this, com.example.administrator.class);
+//            startActivity(i);
+            this.finish();
         }
 
     }

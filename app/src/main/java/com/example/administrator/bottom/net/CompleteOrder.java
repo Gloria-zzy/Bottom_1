@@ -5,8 +5,8 @@ import com.example.administrator.bottom.Config;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class UploadOrder {
-    public UploadOrder(String phone, String time, String location, String note,String date, final SuccessCallback successCallback, final FailCallback failCallback) {
+public class CompleteOrder {
+    public CompleteOrder(String num, final SuccessCallback successCallback, final FailCallback failCallback) {
         new NetConnection(Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
 
             @Override
@@ -41,7 +41,7 @@ public class UploadOrder {
                     failCallback.onFail();
                 }
             }
-        }, Config.KEY_ACTION, Config.ACTION_UPLOAD_ORDER, Config.KEY_ORDER_TIME, time, Config.KEY_ORDER_LOCATION, location, Config.KEY_ORDER_NOTE, note,Config.KEY_ORDER_DATE,date, Config.KEY_PHONE_NUM, phone);
+        }, Config.KEY_ACTION, Config.ACTION_COMPLETE_ORDER, Config.KEY_ORDER_NUMBER, num);
     }
 
     public static interface SuccessCallback {

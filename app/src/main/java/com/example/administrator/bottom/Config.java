@@ -39,6 +39,7 @@ public class Config {
     public static final String KEY_ORDER_TIME = "order_time";
     public static final String KEY_ORDER_LOCATION = "order_location";
     public static final String KEY_ORDER_NOTE = "order_note";
+    public static final String KEY_ORDER_DATE = "order_date";
     public static final String KEY_ORDER_STATUS = "order_status";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
@@ -60,6 +61,7 @@ public class Config {
     public static final String ACTION_PUBLISH = "publish";
     public static final String ACTION_GET_COMMENT = "get_comment";
     public static final String ACTION_REGIST = "regist";
+    public static final String ACTION_COMPLETE_ORDER = "complete_order";
 
     public static final int ACTIVITY_RESULT_NEED_REFRESH = 10000;
 

@@ -189,6 +189,16 @@
                 android:layout_marginTop="10sp">
 
                 <Button
+                    android:id="@+id/order_code"
+                    android:layout_width="75sp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_code_border"
+                    android:textColor="#ffffff"
+                    android:layout_marginRight="5dp"
+                    android:text="订单二维码"
+                    android:textSize="12sp"/>
+
+                <Button
                     android:id="@+id/order_change"
                     android:layout_width="70sp"
                     android:layout_height="wrap_content"

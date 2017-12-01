@@ -11,14 +11,16 @@ public class Order {
     private String location;
     private String note;
     private String status;
+    private String date;
 
-    public Order(String orderNum, String phone, String time, String location, String note, String status) {
+    public Order(String orderNum, String phone, String time, String location, String note, String status,String date) {
         this.orderNum = orderNum;
         this.phone = phone;
         this.time = time;
         this.location = location;
         this.note = note;
         this.status = status;
+        this.date = date;
     }
 
     public String getLocation() {
@@ -44,4 +46,9 @@ public class Order {
     public String getTime() {
         return time;
     }
+
+    public String getDate() {
+        return date;
+    }
+
 }
