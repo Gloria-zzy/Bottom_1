@@ -29,6 +29,46 @@
                 android:queryHint="@string/search_qryHint"
                 android:textSize="18sp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/title_text"
+                    android:layout_weight="1"
+                    android:text="当前订单"
+                    android:id="@+id/page_current"
+                    android:gravity="center"/>
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--style="@style/title_text"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="发现"-->
+                    <!--android:id="@+id/page2"-->
+                    <!--android:gravity="center"/>-->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/title_text"
+                    android:layout_weight="1"
+                    android:text="历史订单"
+                    android:id="@+id/page_history"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#68AE94"/>
+            <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/order_pager" />
+
             <!--<com.example.administrator.bottom.custom.Orderview-->
             <!--android:id="@+id/order"-->
             <!--android:layout_width="wrap_content"-->
@@ -39,45 +79,45 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="7sp"
-            android:gravity="center">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_margin="7sp"-->
+            <!--android:gravity="center">-->
 
-            <View
-                android:layout_width="100sp"
-                android:layout_height="1dip"
-                android:background="#000"
-                android:padding="1dip"
-                android:layout_gravity="center_vertical"/>
+            <!--<View-->
+                <!--android:layout_width="100sp"-->
+                <!--android:layout_height="1dip"-->
+                <!--android:background="#000"-->
+                <!--android:padding="1dip"-->
+                <!--android:layout_gravity="center_vertical"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"
-                android:layout_gravity="center_vertical"
-                android:text="历史订单"/>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10sp"-->
+                <!--android:layout_marginRight="10sp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:text="历史订单"/>-->
 
-            <View
-                android:layout_width="100sp"
-                android:layout_height="1dip"
-                android:background="#000"
-                android:padding="1dip"
-                android:layout_gravity="center_vertical"/>
+            <!--<View-->
+                <!--android:layout_width="100sp"-->
+                <!--android:layout_height="1dip"-->
+                <!--android:background="#000"-->
+                <!--android:padding="1dip"-->
+                <!--android:layout_gravity="center_vertical"/>-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
-        <LinearLayout
-            android:id="@+id/history_order"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/border_clo"
-            android:orientation="vertical">
+        <!--<LinearLayout-->
+            <!--android:id="@+id/history_order"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/border_clo"-->
+            <!--android:orientation="vertical">-->
 
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
     </LinearLayout>
 </ScrollView>
