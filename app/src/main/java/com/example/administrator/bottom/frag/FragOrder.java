@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +39,8 @@ public class FragOrder extends Fragment {
     private Orderview order;
     private LinearLayout ll;
     private LinearLayout history;
+    private ScrollView scrollView1;
+    private ScrollView scrollView2;
     private String phone;
 
     private ViewPager pager;
@@ -76,8 +79,11 @@ public class FragOrder extends Fragment {
         } else {
             view = inflater.inflate(R.layout.frag_order, container, false);
 
-            ll = (LinearLayout) view.findViewById(R.id.current_order_ll);
-            history = (LinearLayout) view.findViewById(R.id.history_order_ll);
+            scrollView1=(ScrollView) inflater.inflate(R.layout.mod_current_order, container, false).findViewById(R.id.current_order_scroll);
+            scrollView2=(ScrollView) inflater.inflate(R.layout.mod_history_order, container, false).findViewById(R.id.history_order_scroll);
+
+            ll = (LinearLayout) scrollView1.findViewById(R.id.current_order_ll);
+            history = (LinearLayout) scrollView2.findViewById(R.id.history_order_ll);
 
             pager = (ViewPager) view.findViewById(R.id.order_pager);
             tv1 = (TextView) view.findViewById(R.id.page_current);
@@ -87,8 +93,6 @@ public class FragOrder extends Fragment {
             tv2.setOnClickListener(new FragOrder.MyClickListener(1));
             tvs.add(tv1);
             tvs.add(tv2);
-
-
 
             //        初始化ViewPager组件
             initView();
@@ -113,7 +117,6 @@ public class FragOrder extends Fragment {
             history.removeAllViews();
         }
         new DownloadOrders(phone, new DownloadOrders.SuccessCallback() {
-
 
             @Override
             public void onSuccess(ArrayList<Order> orders) {
@@ -140,9 +143,11 @@ public class FragOrder extends Fragment {
                     if (status.equals("0")) {
                         newov.setOrder_status("已结束");
                         history.addView(newov);
+//                        Toast.makeText(getActivity(), "you are adding history orders", Toast.LENGTH_SHORT).show();
                     } else if (status.equals("1")) {
                         newov.setOrder_status("正在送货");
                         ll.addView(newov);
+//                        Toast.makeText(getActivity(), "you are adding current orders", Toast.LENGTH_SHORT).show();
                     } else if (status.equals("2")) {
                         newov.setOrder_status("订单异常");
                         ll.addView(newov);
@@ -218,11 +223,12 @@ public class FragOrder extends Fragment {
     public void initView() {
         // TODO Auto-generated method stub
         views = new ArrayList<View>();
-        LayoutInflater li = getActivity().getLayoutInflater();
-        views.add(li.inflate(R.layout.mod_current_order, null));
-        views.add(li.inflate(R.layout.mod_history_order, null));
-    }
+//        scrollView = new ArrayList<View>();
+//        LayoutInflater li = getActivity().getLayoutInflater();
 
+        views.add(scrollView1);
+        views.add(scrollView2);
+    }
 
     public void initViewPager() {
         // TODO Auto-generated method stub
@@ -278,6 +284,7 @@ public class FragOrder extends Fragment {
                                 Object object) {
             // TODO Auto-generated method stub
             //super.destroyItem(container, position, object);
+
             container.removeView(views.get(position));
         }
 

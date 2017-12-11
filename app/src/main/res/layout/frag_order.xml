@@ -64,10 +64,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="#68AE94"/>
+
             <android.support.v4.view.ViewPager
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/order_pager" />
+                android:layout_height="wrap_content"
+                android:id="@+id/order_pager" >
+
+                <ScrollView
+                    android:id="@+id/frag_order_scrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </ScrollView>
+
+            </android.support.v4.view.ViewPager>
 
             <!--<com.example.administrator.bottom.custom.Orderview-->
             <!--android:id="@+id/order"-->
